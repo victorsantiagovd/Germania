@@ -1,0 +1,56 @@
+:root {
+    /* Colores */
+    --color-primary: #136dec;
+    --color-primary-hover: #0f5bc4;
+    --color-primary-light: rgba(19, 109, 236, 0.1);
+    --color-bg-light: #f6f7f8;
+    --color-bg-dark: #101822;
+    --color-text: #0f172a;
+    --color-text-muted: #64748b;
+    --color-border: #cbd5e1;
+    --color-white: #ffffff;
+    --color-error: #dc2626;
+
+    /* Tipografía */
+    --font-display: 'Lexend', sans-serif;
+
+    /* Radios */
+    --radius-default: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+
+    /* Espaciados */
+    --space-xs: 0.375rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+
+    /* Sombras */
+    --shadow-primary: 0 10px 25px -5px rgba(19, 109, 236, 0.3);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  /* Colores Principales */
+  --primary-color: #1A237E;
+  --bg-color: #f8f9fb;
+  --surface-container: #eceef0;
+  
+  /* Textos y Bordes */
+  --text-primary: #191c1e;
+  --text-variant: #454652;
+  --text-outline: #767683;
+  --border-outline: #c6c5d4;
+  
+  /* Estados (Errores y Notificaciones) */
+  --error-color: #ba1a1a;
+  --success-bg: #e8f5e9;
+  --success-border: #a5d6a7;
+  --success-text: #1b5e20;
+  
+  /* Tipografías */
+  --font-headline: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}

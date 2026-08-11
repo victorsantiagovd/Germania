@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Recuperar Contraseña | GERMANIA</title>
+
+  <!-- Fuentes e Iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Hojas de Estilos de tu proyecto -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Header Superior para Móviles -->
+  <header class="mobile-header">
+    <div class="brand-logo">
+      <span class="material-symbols-outlined icon-bold">school</span>
+      <span class="brand-name">GERMANIA</span>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Lado Izquierdo: Branding / Panel Ilustrativo -->
+    <section class="branding-section">
+      <div class="node-network-pattern"></div>
+      
+      <div class="branding-content">
+        <div class="brand-header">
+          <div class="logo-box">
+            <span class="material-symbols-outlined logo-icon">school</span>
+          </div>
+          <span class="brand-title">GERMANIA</span>
+        </div>
+
+        <h1 class="hero-heading">
+          Gestiona tu futuro académico hoy.
+        </h1>
+
+        <div class="glass-panel">
+          <p>
+            Accede a tus cursos, calificaciones y recursos educativos en un solo lugar. Diseñado para potenciar el aprendizaje colaborativo.
+          </p>
+        </div>
+      </div>
+
+      <div class="branding-features">
+        <div class="feature-item">
+          <span class="material-symbols-outlined">check_circle</span>
+          <span>Control Total</span>
+        </div>
+        <div class="feature-item">
+          <span class="material-symbols-outlined">check_circle</span>
+          <span>Acceso Seguro</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lado Derecho: Formulario de Recuperación -->
+    <section class="form-section">
+      <div class="form-wrapper">
+        
+        <div class="form-header">
+          <h2>Recuperar Contraseña</h2>
+          <p>Introduce tu correo institucional para recibir un enlace de restablecimiento.</p>
+        </div>
+
+        <!-- Mensaje de Éxito Oculto por Defecto -->
+        <div id="successMessage" class="alert-success hidden">
+          <span class="material-symbols-outlined">check_circle</span>
+          <div>
+            <strong>¡Enlace enviado!</strong>
+            <p>Revisa tu bandeja de entrada o la carpeta de spam para continuar.</p>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <form id="recoveryForm" novalidate>
+          <div class="input-group-container">
+            <div class="floating-label-group">
+              <span class="material-symbols-outlined input-icon">mail</span>
+              <input 
+                id="email" 
+                type="email" 
+                placeholder=" " 
+                required 
+              />
+              <label for="email">Correo Electrónico</label>
+            </div>
+            <p id="emailError" class="error-text hidden">Por favor, introduce un correo electrónico válido.</p>
+          </div>
+
+          <div class="form-actions">
+            <button id="submitBtn" class="btn-primary" type="submit">
+              <span id="btnText">Enviar Instrucciones</span>
+              <span id="btnIcon" class="material-symbols-outlined">arrow_forward</span>
+            </button>
+
+            <div class="text-center">
+              <a class="back-link" href="login.html">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Volver al inicio de sesión
+              </a>
+            </div>
+          </div>
+        </form>
+
+        <!-- Footer Links -->
+        <footer class="footer-links">
+          <a href="#">TÉRMINOS</a>
+          <a href="#">PRIVACIDAD</a>
+          <a href="#">SOPORTE</a>
+        </footer>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Script de autenticación de tu proyecto -->
+  <script src="js/auth.js"></script>
+</body>
+</html>
