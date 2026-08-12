@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Biblioteca · IE Germania</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/biblioteca.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<script src="js/auth.js"></script>
+
+</head>
+<body>
+
+<div class="app">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar__brand">Germania</div>
+    <div class="navbar__actions">
+      <button class="icon-btn" aria-label="Notificaciones">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Ajustes">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+      </button>
+      <img class="navbar__avatar" src="https://i.pravatar.cc/64?img=13" alt="Foto de usuario" />
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-name">IE GERMANIA</div>
+      <div class="sidebar__brand-sub">CICLO 2024</div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="inicio-estudiante.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+        Inicio
+      </a>
+      <a href="miscursos.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        Mis Cursos
+      </a>
+      <a href="horario.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Horario
+      </a>
+      <a href="calificaciones.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.3 1.2-6.9-5-4.9 6.9-1Z"/></svg>
+        Calificaciones
+      </a>
+      <a href="biblioteca.html" class="nav-item is-active" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 6h8M8 10h8"/></svg>
+        Biblioteca
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <a href="#" id="logoutBtn" class="nav-item nav-item--danger">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Cerrar Sesión
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="page-head" style="margin-bottom:20px;">
+      <div>
+        <h1 style="font-family:var(--font-display);font-size:24px;color:var(--navy-900);margin-bottom:6px;">Biblioteca</h1>
+        <p style="font-size:13.5px;color:var(--gray-500);">Explora y reserva los recursos disponibles para tus materias.</p>
+      </div>
+    </div>
+
+    <div class="library-toolbar">
+      <label class="filter-input">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="bookSearch" placeholder="Buscar por título o autor..." />
+      </label>
+      <button class="chip is-active" data-cat="todas">Todas</button>
+      <button class="chip" data-cat="matematicas">Matemáticas</button>
+      <button class="chip" data-cat="ciencias">Ciencias</button>
+      <button class="chip" data-cat="humanidades">Humanidades</button>
+    </div>
+
+    <div class="library-grid">
+
+      <article class="book-card" data-title="Cálculo de una variable" data-cat="matematicas">
+        <div class="book-card__cover" style="background:linear-gradient(160deg,#1e3a8a,#0b1f45);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        </div>
+        <div>
+          <div class="book-card__title">Cálculo de una Variable</div>
+          <div class="book-card__author">James Stewart</div>
+        </div>
+        <div class="book-card__footer">
+          <span class="book-status is-available">Disponible</span>
+          <button class="book-card__btn">Reservar</button>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="Química orgánica esencial" data-cat="ciencias">
+        <div class="book-card__cover" style="background:linear-gradient(160deg,#0d9488,#0f766e);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6.3L4.2 18a2 2 0 0 0 1.8 3h12a2 2 0 0 0 1.8-3L15 8.3V2"/><path d="M8.5 2h7M9 12h6"/></svg>
+        </div>
+        <div>
+          <div class="book-card__title">Química Orgánica Esencial</div>
+          <div class="book-card__author">Paula Yurkanis Bruice</div>
+        </div>
+        <div class="book-card__footer">
+          <span class="book-status is-borrowed">Prestado</span>
+          <button class="book-card__btn" disabled>No disponible</button>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="Ética a Nicómaco" data-cat="humanidades">
+        <div class="book-card__cover" style="background:linear-gradient(160deg,#7c3aed,#5b21b6);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2.3h6c0-1.1.4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>
+        </div>
+        <div>
+          <div class="book-card__title">Ética a Nicómaco</div>
+          <div class="book-card__author">Aristóteles</div>
+        </div>
+        <div class="book-card__footer">
+          <span class="book-status is-available">Disponible</span>
+          <button class="book-card__btn">Reservar</button>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="Cien años de soledad" data-cat="humanidades">
+        <div class="book-card__cover" style="background:linear-gradient(160deg,#b45309,#92400e);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        </div>
+        <div>
+          <div class="book-card__title">Cien Años de Soledad</div>
+          <div class="book-card__author">Gabriel García Márquez</div>
+        </div>
+        <div class="book-card__footer">
+          <span class="book-status is-available">Disponible</span>
+          <button class="book-card__btn">Reservar</button>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="Biología: la vida en la Tierra" data-cat="ciencias">
+        <div class="book-card__cover" style="background:linear-gradient(160deg,#16a34a,#166534);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18a4 4 0 0 1-1-7.9A5 5 0 0 1 14 6a4.5 4.5 0 0 1 3 8h-1"/><path d="M12 17v5M9 22h6"/></svg>
+        </div>
+        <div>
+          <div class="book-card__title">Biología: La Vida en la Tierra</div>
+          <div class="book-card__author">Teresa Audesirk</div>
+        </div>
+        <div class="book-card__footer">
+          <span class="book-status is-borrowed">Prestado</span>
+          <button class="book-card__btn" disabled>No disponible</button>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="Economía en un solo curso" data-cat="humanidades">
+        <div class="book-card__cover" style="background:linear-gradient(160deg,#334155,#1e293b);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1 3 2.3c0 3-6 1.5-6 4.5 0 1.4 1.3 2.5 3 2.5s3-1 3-2.3"/></svg>
+        </div>
+        <div>
+          <div class="book-card__title">Economía en un Solo Curso</div>
+          <div class="book-card__author">Henry Hazlitt</div>
+        </div>
+        <div class="book-card__footer">
+          <span class="book-status is-available">Disponible</span>
+          <button class="book-card__btn">Reservar</button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="rightbar">
+    <div class="panel">
+      <div class="panel__header">
+        <div class="panel__title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+          Mis Préstamos
+        </div>
+        <a href="#" class="panel__link">Ver todo</a>
+      </div>
+      <div class="task">
+        <div>
+          <div class="task__eyebrow">CIENCIAS NATURALES</div>
+          <div class="task__title">Química Orgánica Esencial</div>
+          <div class="task__due is-urgent">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Vence en 2 días
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2024 Institución Educativa Germania. Todos los derechos reservados.</span>
+    <div class="footer__links">
+      <a href="#">Privacidad</a>
+      <a href="#">Soporte Técnico</a>
+      <a href="#">Contacto</a>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/biblioteca.js"></script>
+</body>
+</html>

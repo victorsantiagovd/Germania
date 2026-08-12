@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inicio · IE Germania</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/inicio.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/inicio-responsive.css" />
+<script src="js/auth.js"></script>
+
+</head>
+<body>
+
+<div class="app">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar__brand">Germania</div>
+    <div class="navbar__actions">
+      <button class="icon-btn" aria-label="Notificaciones">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Ajustes">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+      </button>
+      <img class="navbar__avatar" src="https://i.pravatar.cc/64?img=13" alt="Foto de Alex" />
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-name">IE GERMANIA</div>
+      <div class="sidebar__brand-sub">CICLO 2024</div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="inicio-estudiante.html" class="nav-item is-active" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+        Inicio
+      </a>
+      <a href="miscursos.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        Mis Cursos
+      </a>
+      <a href="horario.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Horario
+      </a>
+      <a href="calificaciones.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.3 1.2-6.9-5-4.9 6.9-1Z"/></svg>
+        Calificaciones
+      </a>
+      <a href="biblioteca.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 6h8M8 10h8"/></svg>
+        Biblioteca
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <a href="#" id="logoutBtn" class="nav-item nav-item--danger">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Cerrar Sesión
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="welcome-header">
+      <div>
+        <h1 id="welcomeName">Bienvenido de nuevo, Alex</h1>
+        <p>Tienes 3 tareas pendientes para esta semana. Mantén el ritmo.</p>
+      </div>
+      <div class="status-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"/></svg>
+        Estado académico: Sobresaliente
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card__label">
+          GPA ACTUAL
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+        </div>
+        <div class="stat-card__value">4.8</div>
+        <div class="stat-card__delta">+0.2 vs mes anterior</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-card__label">
+          ASISTENCIA
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5"/></svg>
+        </div>
+        <div class="stat-card__value">98%</div>
+        <div class="stat-card__bar"><div class="stat-card__bar-fill" style="width:98%"></div></div>
+      </div>
+    </div>
+
+    <div class="progress-card">
+      <div class="progress-card__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+      </div>
+      <div>
+        <div class="progress-card__title">Tu progreso académico va por buen camino</div>
+        <p class="progress-card__text">Has completado el 85% de los módulos de este semestre. Revisa tus calificaciones detalladas en la sección de reportes para ver tu evolución histórica.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="rightbar">
+    <div class="schedule-panel">
+      <div class="schedule-panel__header">
+        <div class="schedule-panel__title">Horario de Hoy</div>
+        <div class="schedule-panel__date">Mar, 24 Oct</div>
+      </div>
+
+      <div class="schedule-list">
+        <div class="schedule-item is-current">
+          <div class="schedule-item__marker"><span class="schedule-item__dot"></span></div>
+          <div>
+            <div class="schedule-item__time">08:00 - 09:30 AM</div>
+            <div class="schedule-item__title">Cálculo Diferencial</div>
+            <div class="schedule-item__place">Aula 402 · Bloque B</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-item__marker"><span class="schedule-item__dot"></span></div>
+          <div>
+            <div class="schedule-item__time">10:00 - 11:30 AM</div>
+            <div class="schedule-item__title">Física Moderna</div>
+            <div class="schedule-item__place">Laboratorio 105</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-item__marker"><span class="schedule-item__dot"></span></div>
+          <div>
+            <div class="schedule-item__time">01:00 - 02:30 PM</div>
+            <div class="schedule-item__title">Sistemas de Control</div>
+            <div class="schedule-item__place">Aula 201 · Bloque A</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="horario.html" class="schedule-panel__btn">Ver Horario Completo</a>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2024 Institución Educativa Germania. Todos los derechos reservados.</span>
+    <div class="footer__links">
+      <a href="#">Privacidad</a>
+      <a href="#">Soporte Técnico</a>
+      <a href="#">Contacto</a>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/inicio.js"></script>
+</body>
+</html>

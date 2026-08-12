@@ -130,3 +130,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Módulo de sesión del portal (versión local con localStorage).
+// Cuando exista un backend real, reemplaza SESSION_KEY/localStorage
+// por llamadas fetch a tu API de autenticación.
+
+const SESSION_KEY = "germania_session";
+
+/**
+ * Guarda la sesión activa y redirige al dashboard.
+ * Se llama desde el formulario de login.html
+ */
+function login({ usuario, rol }) {
+  const session = {
+    usuario,
+    rol,
+    nombre: usuario,
+    iniciadoEn: new Date().toISOString(),
+  };
+  localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+  window.location.href = "index.html";
+}
+
+/**
+ * Borra la sesión y regresa al login.
+ */
+function logout() {
+  localStorage.removeItem(SESSION_KEY);
+  window.location.href = "login.html";
+}
+
+/**
+ * Devuelve el usuario de la sesión activa, o null si no hay sesión.
+ */
+function getCurrentUser() {
+  const raw = localStorage.getItem(SESSION_KEY);
+  return raw ? JSON.parse(raw) : null;
+}
+
+/**
+ * Debe llamarse al cargar cualquier página protegida
+ * (index.html, mis-cursos.html, etc.). Si no hay sesión, redirige a login.html.
+ */
+function requireSession() {
+  if (!getCurrentUser()) {
+    window.location.href = "login.html";
+  }
+}
+
+// Enlaza automáticamente cualquier botón/enlace #logoutBtn presente en la página.
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("logoutBtn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    logout();
+  });
+});

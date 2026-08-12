@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mis Cursos · IE Germania</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<script src="js/auth.js"></script>
+
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-name">IE GERMANIA</div>
+      <div class="sidebar__brand-sub">PORTAL ESTUDIANTIL</div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="inicio-estudiante.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+        Inicio
+      </a>
+      <a href="miscursos.html" class="nav-item is-active" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        Mis Cursos
+      </a>
+      <a href="horario.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Horario
+      </a>
+      <a href="calificaciones.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.3 1.2-6.9-5-4.9 6.9-1Z"/></svg>
+        Calificaciones
+      </a>
+      <a href="biblioteca.html" class="nav-item" data-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 6h8M8 10h8"/></svg>
+        Biblioteca
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <a href="ajustes.html" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+        Ajustes
+      </a>
+      <a href="ayuda.html" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4"/><path d="M12 17h.01"/></svg>
+        Ayuda
+      </a>
+      <a href="#" id="logoutBtn" class="nav-item nav-item--danger">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Cerrar Sesión
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="topbar">
+      <label class="search-box">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" placeholder="Buscar en mis cursos..." />
+      </label>
+
+      <button class="icon-btn" aria-label="Notificaciones">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+        <span class="dot"></span>
+      </button>
+
+      <div class="user-chip">
+        <img class="user-chip__avatar" src="https://i.pravatar.cc/72?img=13" alt="Foto de Mateo Alemán" />
+        <div>
+          <div class="user-chip__name">Mateo Alemán</div>
+          <div class="user-chip__role">11° Bachillerato - A</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-header">
+      <h1>Plan de Estudios Bachillerato</h1>
+      <p>Gestione su progreso académico en las materias del núcleo común y especializado del grado undécimo.</p>
+    </div>
+
+    <div class="toolbar">
+      <label class="filter-input">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="courseSearch" placeholder="Filtrar por nombre de materia..." />
+      </label>
+      <button class="chip is-active" data-area="todas">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        Todas las áreas
+      </button>
+      <button class="chip" data-area="ciencias">Ciencias</button>
+      <button class="chip" data-area="humanidades">Humanidades</button>
+    </div>
+
+    <div class="course-grid">
+
+      <article class="course-card" data-title="Trigonometría y Cálculo" data-area="ciencias">
+        <div class="course-card__top">
+          <div class="course-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v2l-6.5 6.5L20 19v1H4v-1l6.5-6.5L4 6Z"/></svg>
+          </div>
+          <span class="badge">MATEMÁTICAS</span>
+        </div>
+        <div>
+          <div class="course-card__title">Trigonometría y Cálculo</div>
+        </div>
+        <div class="course-card__teacher">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          Prof. Carlos Méndez
+        </div>
+      </article>
+
+      <article class="course-card" data-title="Química Orgánica" data-area="ciencias">
+        <div class="course-card__top">
+          <div class="course-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6.3L4.2 18a2 2 0 0 0 1.8 3h12a2 2 0 0 0 1.8-3L15 8.3V2"/><path d="M8.5 2h7M9 12h6"/></svg>
+          </div>
+          <span class="badge">CIENCIAS NATURALES</span>
+        </div>
+        <div>
+          <div class="course-card__title">Química Orgánica</div>
+        </div>
+        <div class="course-card__teacher">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          Dra. Elena Morelo
+        </div>
+      </article>
+
+      <article class="course-card" data-title="Filosofía y Ética" data-area="humanidades">
+        <div class="course-card__top">
+          <div class="course-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2.3h6c0-1.1.4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>
+          </div>
+          <span class="badge">HUMANIDADES</span>
+        </div>
+        <div>
+          <div class="course-card__title">Filosofía y Ética</div>
+        </div>
+        <div class="course-card__teacher">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          Lic. Jorge Ibáñez
+        </div>
+      </article>
+
+      <article class="course-card" data-title="Lengua y Literatura" data-area="humanidades">
+        <div class="course-card__top">
+          <div class="course-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+          </div>
+          <span class="badge">LENGUAJE</span>
+        </div>
+        <div>
+          <div class="course-card__title">Lengua y Literatura</div>
+        </div>
+        <div class="course-card__teacher">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          Lic. Martha García
+        </div>
+      </article>
+
+      <article class="course-card" data-title="Biología Celular" data-area="ciencias">
+        <div class="course-card__top">
+          <div class="course-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18a4 4 0 0 1-1-7.9A5 5 0 0 1 14 6a4.5 4.5 0 0 1 3 8h-1"/><path d="M12 17v5M9 22h6"/></svg>
+          </div>
+          <span class="badge">CIENCIAS</span>
+        </div>
+        <div>
+          <div class="course-card__title">Biología Celular</div>
+        </div>
+        <div class="course-card__teacher">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          Dr. Roberto Vélez
+        </div>
+      </article>
+
+      <article class="course-card" data-title="Economía Política" data-area="humanidades">
+        <div class="course-card__top">
+          <div class="course-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1 3 2.3c0 3-6 1.5-6 4.5 0 1.4 1.3 2.5 3 2.5s3-1 3-2.3"/></svg>
+          </div>
+          <span class="badge">CIENCIAS SOCIALES</span>
+        </div>
+        <div>
+          <div class="course-card__title">Economía Política</div>
+        </div>
+        <div class="course-card__teacher">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          Lic. Sandra Holguín
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="rightbar">
+    <div class="panel">
+      <div class="panel__header">
+        <div class="panel__title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
+          Tareas Próximas
+        </div>
+        <a href="tareas.html" class="panel__link">Ver todo</a>
+      </div>
+
+      <div class="task">
+        <div>
+          <div class="task__eyebrow">QUÍMICA ORGÁNICA</div>
+          <div class="task__title">Informe: Síntesis de Hidrocarburos</div>
+          <div class="task__due is-urgent">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Entrega mañana
+          </div>
+        </div>
+        <svg class="task__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+
+      <div class="task">
+        <div>
+          <div class="task__eyebrow">CÁLCULO</div>
+          <div class="task__title">Taller de Derivadas Implícitas</div>
+          <div class="task__due is-normal">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Viernes, 24 Oct
+          </div>
+        </div>
+        <svg class="task__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="promo">
+      <div class="promo__icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="1"/><path d="M5 20a7 7 0 0 1 14 0"/><path d="M9 12h6v8H9z"/></svg>
+      </div>
+      <div>
+        <div class="promo__eyebrow">ORIENTACIÓN</div>
+        <div class="promo__title">Preicfes &amp; Orientación Profesional</div>
+      </div>
+      <p class="promo__text">Prepárate para las pruebas de estado y define tu carrera universitaria.</p>
+      <button class="promo__btn">Inscribirse</button>
+    </div>
+  </aside>
+
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+/*variables de login */
 :root {
     /* Colores */
     --color-primary: #136dec;
@@ -32,6 +33,7 @@
     --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/*variables de recuperar usuario */
 :root {
   /* Colores Principales */
   --primary-color: #1A237E;
@@ -53,4 +55,46 @@
   /* Tipografías */
   --font-headline: 'Manrope', sans-serif;
   --font-body: 'Inter', sans-serif;
+}
+
+/*variables de inicio de estudiante */
+
+:root {
+  /* Colores de marca */
+  --navy-900: #0b1f45;
+  --navy-800: #14285c;
+  --navy-700: #1c3373;
+  --blue-600: #1e3a8a;
+  --blue-500: #2b4fa8;
+  --blue-100: #dbe4fb;
+  --blue-50: #eef2fd;
+
+  /* Neutros */
+  --white: #ffffff;
+  --gray-50: #f7f9fc;
+  --gray-100: #eef1f6;
+  --gray-200: #e2e7f0;
+  --gray-400: #9aa5b8;
+  --gray-500: #6b7690;
+  --gray-700: #3c455a;
+  --gray-900: #1a2135;
+
+  /* Estados */
+  --red-500: #e5484d;
+  --red-50: #fdeceb;
+
+  /* Tipografía */
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Sora", "Inter", system-ui, sans-serif;
+
+  /* Radios y sombras */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(11, 31, 69, 0.08);
+
+  /* Layout */
+  --sidebar-w: 240px;
+  --rightbar-w: 300px;
 }
