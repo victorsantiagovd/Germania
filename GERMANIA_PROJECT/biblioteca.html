@@ -8,8 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/variables.css" />
 <link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/biblioteca.css" />
 <link rel="stylesheet" href="css/responsive.css" />
+
+<!-- auth.js se carga en el <head>, ANTES de que exista el <body>, y
+     requireSession() corta la carga de la página si no hay sesión activa
+     (por ejemplo redirige a login.html). Así el usuario nunca alcanza a
+     ver el contenido de la biblioteca sin haber iniciado sesión. -->
 <script src="js/auth.js"></script>
 
 </head>
@@ -17,7 +21,7 @@
 
 <div class="app">
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR: barra superior fija, igual en todas las páginas del portal estudiantil -->
   <header class="navbar">
     <div class="navbar__brand">Germania</div>
     <div class="navbar__actions">
@@ -31,7 +35,9 @@
     </div>
   </header>
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR: navegación principal del portal estudiantil.
+       data-nav en cada link probablemente lo usa menu.js para resaltar
+       la página activa; aquí "Biblioteca" ya trae la clase is-active a mano -->
   <aside class="sidebar">
     <div class="sidebar__brand">
       <div class="sidebar__brand-name">IE GERMANIA</div>
@@ -55,6 +61,8 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.3 1.2-6.9-5-4.9 6.9-1Z"/></svg>
         Calificaciones
       </a>
+      <!-- is-active marcado a mano porque estamos EN esta página; en las demás
+           páginas del portal, es ese mismo link el que llevaría is-active -->
       <a href="biblioteca.html" class="nav-item is-active" data-nav>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 6h8M8 10h8"/></svg>
         Biblioteca
@@ -69,7 +77,7 @@
     </div>
   </aside>
 
-  <!-- MAIN -->
+  <!-- MAIN: contenido central de la página -->
   <main class="main">
     <div class="page-head" style="margin-bottom:20px;">
       <div>
@@ -78,6 +86,9 @@
       </div>
     </div>
 
+    <!-- Barra de herramientas: buscador de texto + chips de categoría.
+         La clase "is-active" en el chip "Todas" indica el filtro seleccionado
+         por defecto; biblioteca.js debe encargarse de moverla al hacer clic -->
     <div class="library-toolbar">
       <label class="filter-input">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
@@ -89,6 +100,9 @@
       <button class="chip" data-cat="humanidades">Humanidades</button>
     </div>
 
+    <!-- Grid de libros. Cada tarjeta lleva data-title y data-cat: son los datos
+         que biblioteca.js lee en JS para filtrar por categoría y buscar por texto
+         sin tener que volver a pedirlos al servidor. -->
     <div class="library-grid">
 
       <article class="book-card" data-title="Cálculo de una variable" data-cat="matematicas">
@@ -113,6 +127,8 @@
           <div class="book-card__title">Química Orgánica Esencial</div>
           <div class="book-card__author">Paula Yurkanis Bruice</div>
         </div>
+        <!-- Libro "Prestado": el botón queda disabled para que no se pueda
+             reservar dos veces algo que ya está prestado -->
         <div class="book-card__footer">
           <span class="book-status is-borrowed">Prestado</span>
           <button class="book-card__btn" disabled>No disponible</button>
@@ -178,7 +194,7 @@
     </div>
   </main>
 
-  <!-- RIGHT PANEL -->
+  <!-- RIGHT PANEL: recordatorio rápido de préstamos activos del estudiante -->
   <aside class="rightbar">
     <div class="panel">
       <div class="panel__header">
@@ -213,6 +229,8 @@
 
 </div>
 
+<!-- menu.js: resalta el link activo / maneja el sidebar
+     biblioteca.js: lógica propia de esta página (búsqueda, filtros, reservar) -->
 <script src="js/menu.js"></script>
 <script src="js/biblioteca.js"></script>
 </body>

@@ -4,42 +4,58 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Inicio · IE Germania</title>
+
+<!-- Fuentes tipográficas externas (Google Fonts) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+
+<!-- Estilos CSS globales y específicos de la página -->
 <link rel="stylesheet" href="css/variables.css" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/inicio.css" />
 <link rel="stylesheet" href="css/responsive.css" />
 <link rel="stylesheet" href="css/inicio-responsive.css" />
+
+<!-- Control de autenticación: verifica la sesión antes de renderizar la página -->
 <script src="js/auth.js"></script>
 
 </head>
 <body>
 
+<!-- Contenedor principal del dashboard (Layout de 3 columnas o Grid) -->
 <div class="app">
 
-  <!-- NAVBAR -->
+  <!-- ==================== BARRA DE NAVEGACIÓN SUPERIOR ==================== -->
   <header class="navbar">
     <div class="navbar__brand">Germania</div>
+    
     <div class="navbar__actions">
+      <!-- Botón de notificaciones con atributo accesible -->
       <button class="icon-btn" aria-label="Notificaciones">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
       </button>
+
+      <!-- Botón de ajustes de usuario -->
       <button class="icon-btn" aria-label="Ajustes">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
       </button>
+
+      <!-- Avatar del usuario conectado -->
       <img class="navbar__avatar" src="https://i.pravatar.cc/64?img=13" alt="Foto de Alex" />
     </div>
   </header>
 
-  <!-- SIDEBAR -->
+  <!-- ==================== MENÚ LATERAL (SIDEBAR) ==================== -->
   <aside class="sidebar">
+    <!-- Identificación de la institución y periodo académico -->
     <div class="sidebar__brand">
       <div class="sidebar__brand-name">IE GERMANIA</div>
       <div class="sidebar__brand-sub">CICLO 2024</div>
     </div>
 
+    <!-- Navegación principal -->
     <nav class="sidebar__nav">
+      <!-- Elemento activo (.is-active) indica la sección actual -->
       <a href="inicio-estudiante.html" class="nav-item is-active" data-nav>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V21h14V9.5"/></svg>
         Inicio
@@ -62,6 +78,7 @@
       </a>
     </nav>
 
+    <!-- Pie del sidebar: opción para cerrar sesión -->
     <div class="sidebar__footer">
       <a href="#" id="logoutBtn" class="nav-item nav-item--danger">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
@@ -70,8 +87,9 @@
     </div>
   </aside>
 
-  <!-- MAIN -->
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
   <main class="main">
+    <!-- Saludo inicial y resumen de estado -->
     <div class="welcome-header">
       <div>
         <h1 id="welcomeName">Bienvenido de nuevo, Alex</h1>
@@ -83,7 +101,9 @@
       </div>
     </div>
 
+    <!-- Grilla de estadísticas rápidas (Métricas del estudiante) -->
     <div class="stat-grid">
+      <!-- Tarjeta 1: Promedio de notas (GPA) -->
       <div class="stat-card">
         <div class="stat-card__label">
           GPA ACTUAL
@@ -93,6 +113,7 @@
         <div class="stat-card__delta">+0.2 vs mes anterior</div>
       </div>
 
+      <!-- Tarjeta 2: Porcentaje de asistencia con barra visual -->
       <div class="stat-card">
         <div class="stat-card__label">
           ASISTENCIA
@@ -103,6 +124,7 @@
       </div>
     </div>
 
+    <!-- Tarjeta informativa de avance general -->
     <div class="progress-card">
       <div class="progress-card__icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
@@ -114,7 +136,7 @@
     </div>
   </main>
 
-  <!-- RIGHT PANEL -->
+  <!-- ==================== PANEL LATERAL DERECHO (AGENDA/HORARIO) ==================== -->
   <aside class="rightbar">
     <div class="schedule-panel">
       <div class="schedule-panel__header">
@@ -122,7 +144,9 @@
         <div class="schedule-panel__date">Mar, 24 Oct</div>
       </div>
 
+      <!-- Lista cronológica de clases del día -->
       <div class="schedule-list">
+        <!-- Clase en curso (.is-current para resaltado visual) -->
         <div class="schedule-item is-current">
           <div class="schedule-item__marker"><span class="schedule-item__dot"></span></div>
           <div>
@@ -132,6 +156,7 @@
           </div>
         </div>
 
+        <!-- Próxima clase -->
         <div class="schedule-item">
           <div class="schedule-item__marker"><span class="schedule-item__dot"></span></div>
           <div>
@@ -141,6 +166,7 @@
           </div>
         </div>
 
+        <!-- Última clase del día -->
         <div class="schedule-item">
           <div class="schedule-item__marker"><span class="schedule-item__dot"></span></div>
           <div>
@@ -155,7 +181,7 @@
     </div>
   </aside>
 
-  <!-- FOOTER -->
+  <!-- ==================== PIE DE PÁGINA ==================== -->
   <footer class="footer">
     <span>© 2024 Institución Educativa Germania. Todos los derechos reservados.</span>
     <div class="footer__links">
@@ -167,6 +193,7 @@
 
 </div>
 
+<!-- Scripts de interacción del menú y lógica de la vista principal -->
 <script src="js/menu.js"></script>
 <script src="js/inicio.js"></script>
 </body>

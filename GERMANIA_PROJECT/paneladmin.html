@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Configuración de codificación de caracteres y vista móvil (Responsive) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de Control · EduLedger</title>
+
+<!-- Preconexión e importación de tipografías desde Google Fonts (Manrope e Inter) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Hojas de estilo CSS del proyecto (Variables globales, estilos generales y adaptatividad) -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==================== BARRA SUPERIOR (TOPBAR) ==================== -->
+<header class="topbar">
+  <!-- Sección izquierda: Conmutador de menú para móvil e identidad de la marca -->
+  <div class="topbar-left">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <span class="brand">Germania</span>
+  </div>
+
+  <!-- Sección derecha: Notificaciones, ajustes y perfil del usuario -->
+  <div class="topbar-right">
+    <!-- Botón de notificaciones con punto de alerta/novedades -->
+    <button class="icon-btn" aria-label="Notificaciones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      <span class="dot"></span>
+    </button>
+
+    <!-- Botón de configuración general -->
+    <button class="icon-btn" aria-label="Configuración">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    </button>
+
+    <!-- Avatar con iniciales del Administrador -->
+    <div class="avatar">AD</div>
+  </div>
+</header>
+
+<!-- Contenedor estructural de la aplicación -->
+<div class="app-shell">
+  <!-- Fondo oscuro para cerrar la barra lateral en dispositivos móviles -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ==================== BARRA LATERAL (SIDEBAR) ==================== -->
+  <aside class="sidebar" id="sidebar">
+    <!-- Rol del usuario actual -->
+    <div class="sidebar-role">
+      <div class="role-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><polygon points="12 3 21 9 3 9"></polygon></svg>
+      </div>
+      <span class="role-label">Administrador</span>
+    </div>
+
+    <!-- Navegación principal -->
+    <nav class="nav-group">
+      <a class="nav-link active" href="paneladmin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Inicio
+      </a>
+      <a class="nav-link" href="instituadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><polygon points="12 3 21 9 3 9"></polygon></svg>
+        Institución
+      </a>
+      <a class="nav-link" href="matriculadmin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="8.5" cy="11" r="2.2"></circle><line x1="5.5" y1="17" x2="11.5" y2="17"></line><line x1="15" y1="9" x2="19" y2="9"></line><line x1="15" y1="13" x2="19" y2="13"></line></svg>
+        Matrículas
+      </a>
+      <a class="nav-link" href="docenteadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
+        Docentes
+      </a>
+      <a class="nav-link" href="reporte.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        Reportes
+      </a>
+    </nav>
+
+    <!-- Pie de la barra lateral con versión del sistema -->
+    <div class="sidebar-footer">EduLedger v2.4 · Germania</div>
+  </aside>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+  <main class="main-content">
+    <!-- Encabezado de la página -->
+    <div class="page-header">
+      <div>
+        <h1>Panel de Control</h1>
+        <p class="subtitle">Gestión administrativa y académica institucional</p>
+      </div>
+    </div>
+
+    <!-- ==================== TARJETAS DE ESTADÍSTICAS (STAT CARDS) ==================== -->
+    <section class="stat-grid">
+      <!-- Tarjeta 1: Estudiantes Activos -->
+      <div class="stat-card">
+        <div class="stat-top">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
+          </div>
+          <span class="badge badge-up">+2.4%</span>
+        </div>
+        <div class="stat-label">Estudiantes Activos</div>
+        <div class="stat-value">1,240</div>
+        <div class="stat-meta">Actualizado hace 5 min</div>
+      </div>
+
+      <!-- Tarjeta 2: Sedes Operativas -->
+      <div class="stat-card">
+        <div class="stat-top">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="9" y2="9.01"></line><line x1="9" y1="12" x2="9" y2="12.01"></line><line x1="9" y1="15" x2="9" y2="15.01"></line></svg>
+          </div>
+        </div>
+        <div class="stat-label">Sedes Operativas</div>
+        <div class="stat-value">12</div>
+        <div class="stat-tags"><span class="tag">4 Urbanas</span><span class="tag">8 Rurales</span></div>
+      </div>
+
+      <!-- Tarjeta 3: Alertas de Vulnerabilidad (IVE) -->
+      <div class="stat-card alert">
+        <div class="stat-top">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <span class="badge badge-action">Acción requerida</span>
+        </div>
+        <div class="stat-label">Alertas IVE</div>
+        <div class="stat-value">224</div>
+        <div class="stat-meta warn">Vulnerabilidad detectada en ciclo 5</div>
+      </div>
+    </section>
+
+    <!-- ==================== REJILLA INFERIOR DE INFORMACIÓN ==================== -->
+    <section class="dashboard-grid">
+      <!-- Bloque 1: Tabla de últimas matrículas -->
+      <div class="card">
+        <div class="card-header">
+          <div class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1"></rect><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
+            Últimas Matrículas Realizadas
+          </div>
+          <a href="matriculas.html" class="link-more">Ver todo el historial</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Estudiante</th><th>Documento</th><th>Grado</th><th>Estado</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="person-cell"><div class="mini-avatar">AM</div><span>Alejandro Morales</span></div></td>
+                <td>1.098.765.432</td><td>Décimo (10º)</td>
+                <td><span class="status-pill status-completado">COMPLETADO</span></td>
+              </tr>
+              <tr>
+                <td><div class="person-cell"><div class="mini-avatar">SC</div><span>Sofía Carrillo</span></div></td>
+                <td>1.121.343.980</td><td>Sexto (6º)</td>
+                <td><span class="status-pill status-completado">COMPLETADO</span></td>
+              </tr>
+              <tr>
+                <td><div class="person-cell"><div class="mini-avatar">JR</div><span>Julián Restrepo</span></div></td>
+                <td>1.054.321.678</td><td>Noveno (9º)</td>
+                <td><span class="status-pill status-pendiente">PENDIENTE</span></td>
+              </tr>
+              <tr>
+                <td><div class="person-cell"><div class="mini-avatar">LB</div><span>Lucía Blanco</span></div></td>
+                <td>1.032.987.456</td><td>Undécimo (11º)</td>
+                <td><span class="status-pill status-completado">COMPLETADO</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Bloque 2: Indicadores de asistencia por sedes -->
+      <div class="card">
+        <div class="card-header">
+          <div class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            Asistencia Sedes
+          </div>
+          <span class="results-chip">Última semana</span>
+        </div>
+
+        <!-- Porcentaje Sede Urbana -->
+        <div class="attendance-row">
+          <div class="attendance-head"><span>Sede Urbana</span><span>94%</span></div>
+          <div class="progress"><span style="width:94%"></span></div>
+        </div>
+
+        <!-- Porcentaje Sede Rural -->
+        <div class="attendance-row">
+          <div class="attendance-head"><span>Sede Rural</span><span>82%</span></div>
+          <div class="progress light"><span style="width:82%"></span></div>
+        </div>
+
+        <!-- Caja de notas informativas -->
+        <div class="note-box">
+          <strong>Nota:</strong> La sede rural presenta un descenso del 3% respecto a la semana anterior debido a condiciones climáticas.
+        </div>
+
+        <!-- Botón para descargar/generar reporte -->
+        <div style="padding:0 24px 24px;">
+          <button class="btn btn-primary btn-block" type="button">Generar Reporte Consolidado</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Lógica JavaScript principal de la aplicación -->
+<script src="js/main.js"></script>
+</body>
+</html>

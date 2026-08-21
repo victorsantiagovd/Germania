@@ -1,23 +1,37 @@
-/*responsive inicio */
+/* ============================================================
+   ESTILOS RESPONSIVOS — INICIO DE SESIÓN Y DASHBOARD
+   Ajustes adaptativos para pantallas de escritorio, tabletas y móviles.
+   ============================================================ */
+
+/* Pantallas medianas / Tableta horizontal (hasta 1180px) */
 @media (max-width: 1180px) {
+  /* Reorganiza el layout principal pasando a un diseño de dos columnas */
   .app {
     grid-template-columns: var(--sidebar-w) 1fr;
   }
+
+  /* La barra lateral derecha (rightbar) se desplaza al final a ancho completo */
   .rightbar {
     grid-column: 1 / -1;
     flex-direction: row;
     padding: 0 28px 24px;
   }
+
+  /* Los paneles internos se distribuyen equitativamente en horizontal */
   .rightbar .panel,
   .rightbar .promo {
     flex: 1;
   }
 }
 
+/* Tableta vertical y pantallas intermedias (hasta 860px) */
 @media (max-width: 860px) {
+  /* Layout a una sola columna para priorizar el contenido principal */
   .app {
     grid-template-columns: 1fr;
   }
+
+  /* La barra lateral principal se transforma en un menú off-canvas (desplegable) */
   .sidebar {
     position: fixed;
     inset: 0 auto 0 0;
@@ -27,36 +41,54 @@
     z-index: 40;
     box-shadow: var(--shadow-md);
   }
+
+  /* Estado visible de la barra lateral desplegada */
   .sidebar.is-open {
     transform: translateX(0);
   }
+
+  /* Reorganiza la cuadrícula de cursos a una sola columna */
   .course-grid {
     grid-template-columns: 1fr;
   }
+
+  /* La barra derecha pasa a disposición vertical con márgenes reducidos */
   .rightbar {
     flex-direction: column;
     padding: 0 20px 20px;
   }
+
+  /* Ajusta los espaciados del contenedor principal */
   .main {
     padding: 16px 20px;
   }
 }
 
+/* Teléfonos móviles y pantallas pequeñas (hasta 560px) */
 @media (max-width: 560px) {
+  /* Distribución de la barra superior */
   .topbar {
     justify-content: space-between;
   }
+
+  /* El campo de búsqueda ocupa el espacio disponible */
   .search-box {
     width: auto;
     flex: 1;
   }
+
+  /* Oculta los textos descriptivos del perfil de usuario para optimizar espacio */
   .user-chip__name,
   .user-chip__role {
     display: none;
   }
+
+  /* Permite que los elementos de la barra de herramientas se envuelvan */
   .toolbar {
     flex-wrap: wrap;
   }
+
+  /* El campo de filtrado ocupa el 100% del ancho del contenedor */
   .filter-input {
     flex-basis: 100%;
   }

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Personal Docente · EduLedger</title>
+
+<!-- Fuentes: Manrope para títulos (más pesada/institucional), Inter para texto general -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Hojas de estilo del proyecto, en orden de "menos específico" a "más específico":
+     1) variables.css  -> colores y tokens globales (--color-primary, etc.)
+     2) style.css       -> estilos base compartidos por todas las páginas
+     3) registrodoce.css -> estilos SOLO de esta página (formulario de docente)
+     4) responsive.css  -> ajustes de pantallas pequeñas, va al final para que
+                            pueda "ganarle" en tamaño de pantalla a los estilos de arriba -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/registrodoce.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- Breadcrumb: le muestra al usuario en qué parte del panel está y le da un camino de regreso -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="docenteadmi.html">Docentes</a>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">Registro de Personal Docente</span>
+  </nav>
+
+  <header class="page-header">
+    <h1>Registro de Personal Docente</h1>
+    <p class="page-subtitle">Gestión de expedientes administrativos y vinculación institucional para nuevos catedráticos.</p>
+  </header>
+
+  <!-- novalidate: apagamos la validación nativa del navegador porque la manejamos
+       nosotros mismos en registro-docente.js (así controlamos los mensajes de error) -->
+  <form id="form-docente" class="docente-layout" novalidate>
+
+    <!-- ===================== COLUMNA PRINCIPAL ===================== -->
+    <div class="docente-main">
+
+      <!-- ---------- SECCIÓN 1: Identidad Personal ---------- -->
+      <!-- Cada <fieldset> agrupa un bloque de datos relacionados; el <legend>
+           adentro es el título visible de la tarjeta (con su icono) -->
+      <fieldset class="card">
+        <legend class="card-title">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+          Identidad Personal
+        </legend>
+
+        <div class="field-grid two-col">
+          <div class="field">
+            <label for="nombre-completo">Nombre completo</label>
+            <input type="text" id="nombre-completo" name="nombreCompleto" placeholder="Ej: Dr. Julian Casablancas" required>
+            <!-- Aquí el JS inyecta el mensaje de error si el campo no es válido -->
+            <span class="field-error" data-error-for="nombre-completo"></span>
+          </div>
+          <div class="field">
+            <label for="numero-id">Número de identificación</label>
+            <!-- pattern valida en el navegador; el JS repite la misma regla al enviar -->
+            <input type="text" id="numero-id" name="numeroIdentificacion" placeholder="ID Nacional / Cédula" required pattern="[0-9.]{6,15}">
+            <span class="field-error" data-error-for="numero-id"></span>
+          </div>
+        </div>
+
+        <div class="field-grid two-col">
+          <div class="field">
+            <label for="fecha-nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fecha-nacimiento" name="fechaNacimiento" required>
+            <span class="field-error" data-error-for="fecha-nacimiento"></span>
+          </div>
+          <div class="field">
+            <label for="genero">Género</label>
+            <select id="genero" name="genero" required>
+              <option value="" selected disabled>Seleccione una opción</option>
+              <option value="femenino">Femenino</option>
+              <option value="masculino">Masculino</option>
+              <option value="otro">Otro</option>
+              <option value="prefiero-no-decir">Prefiero no decir</option>
+            </select>
+            <span class="field-error" data-error-for="genero"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ---------- SECCIÓN 2: Información Profesional ---------- -->
+      <fieldset class="card">
+        <legend class="card-title">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+          Información Profesional
+        </legend>
+
+        <div class="field">
+          <label for="titulo-academico">Título académico</label>
+          <input type="text" id="titulo-academico" name="tituloAcademico" placeholder="Ej: Magíster en Pedagogía Aplicada" required>
+          <span class="field-error" data-error-for="titulo-academico"></span>
+        </div>
+
+        <div class="field-grid two-col">
+          <div class="field">
+            <label for="especialidad">Especialidad</label>
+            <input type="text" id="especialidad" name="especialidad" placeholder="Ej: Matemáticas Avanzadas" required>
+            <span class="field-error" data-error-for="especialidad"></span>
+          </div>
+          <div class="field">
+            <label for="anos-experiencia">Años de experiencia</label>
+            <input type="number" id="anos-experiencia" name="anosExperiencia" placeholder="0" min="0" max="60" required>
+            <span class="field-error" data-error-for="anos-experiencia"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ---------- SECCIÓN 3: Vinculación Institucional ---------- -->
+      <fieldset class="card">
+        <legend class="card-title">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="14" rx="1.5"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+          Vinculación Institucional
+        </legend>
+
+        <div class="field-grid three-col">
+          <!-- Los radios no usan <label for=""> normal porque son dos opciones dentro
+               de un mismo campo; en su lugar usamos un texto "field-label-static" arriba -->
+          <div class="field">
+            <span class="field-label-static">Sede asignada</span>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="sede" value="urbana" required>
+                <span>Sede Urbana</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="sede" value="rural">
+                <span>Sede Rural</span>
+              </label>
+            </div>
+            <span class="field-error" data-error-for="sede"></span>
+          </div>
+
+          <div class="field">
+            <label for="tipo-contrato">Tipo de contrato</label>
+            <select id="tipo-contrato" name="tipoContrato" required>
+              <option value="" selected disabled>Seleccione una opción</option>
+              <option value="planta">Planta / Permanente</option>
+              <option value="provisional">Provisional</option>
+              <option value="catedra">Cátedra por horas</option>
+              <option value="temporal">Reemplazo temporal</option>
+            </select>
+            <span class="field-error" data-error-for="tipo-contrato"></span>
+          </div>
+
+          <div class="field">
+            <label for="fecha-ingreso">Fecha de ingreso</label>
+            <input type="date" id="fecha-ingreso" name="fechaIngreso" required>
+            <span class="field-error" data-error-for="fecha-ingreso"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Botones de acción: Cancelar es un link normal, Guardar envía el formulario -->
+      <div class="form-actions">
+        <a href="docenteadmi.html" class="btn btn-ghost">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Guardar Docente</button>
+      </div>
+    </div>
+
+    <!-- ===================== COLUMNA LATERAL ===================== -->
+    <aside class="docente-side">
+
+      <!-- Checklist informativo: por ahora es solo visual (no bloquea el envío),
+           pensado para que el admin marque manualmente qué documentos ya revisó -->
+      <div class="card side-card">
+        <div class="side-card-header">
+          <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg> Validación de Credenciales</h2>
+          <span class="badge-required">REQUERIDO</span>
+        </div>
+
+        <ul class="checklist">
+          <li class="checklist-item">
+            <input type="checkbox" id="chk-antecedentes" name="credenciales" value="antecedentes">
+            <label for="chk-antecedentes">
+              <strong>Antecedentes legales</strong>
+              <span>Verificación de pasado judicial y fiscalía.</span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <input type="checkbox" id="chk-certificados" name="credenciales" value="certificados">
+            <label for="chk-certificados">
+              <strong>Certificados académicos</strong>
+              <span>Diplomas apostillados o convalidados.</span>
+            </label>
+          </li>
+          <li class="checklist-item">
+            <input type="checkbox" id="chk-escalafon" name="credenciales" value="escalafon">
+            <label for="chk-escalafon">
+              <strong>Registro en Escalafón</strong>
+              <span>Resolución vigente de categoría docente.</span>
+            </label>
+          </li>
+        </ul>
+
+        <p class="upload-hint">Sube el expediente completo en un solo PDF comprimido para agilizar el proceso.</p>
+
+        <!-- El <input type="file"> real está oculto (hidden); el <label> de arriba
+             hace de botón visible y, al hacer clic, abre el explorador de archivos -->
+        <label class="upload-dropzone" for="input-expediente">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          <span id="upload-filename">Adjuntar Documentación</span>
+          <input type="file" id="input-expediente" name="expediente" accept="application/pdf" hidden>
+        </label>
+      </div>
+
+      <!-- Aviso de privacidad, sin funcionalidad, solo texto informativo -->
+      <div class="card side-card side-card-security">
+        <h3>Protocolo de Seguridad</h3>
+        <p>Todos los datos personales y académicos ingresados en Germania Admin están protegidos bajo los términos de la Ley de Protección de Datos Personales Institucional.</p>
+      </div>
+    </aside>
+
+  </form>
+</div>
+
+<!-- Modal de confirmación de guardado: está oculto por defecto (hidden) y
+     registro-docente.js lo muestra/oculta cuando el registro se guarda con éxito -->
+<div class="modal-overlay" id="modal-exito" hidden>
+  <div class="modal-box" role="alertdialog" aria-labelledby="modal-exito-titulo" aria-describedby="modal-exito-desc">
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+    </div>
+    <h2 id="modal-exito-titulo">Docente registrado correctamente</h2>
+    <p id="modal-exito-desc">El expediente de <strong id="modal-exito-nombre">—</strong> se guardó y quedó vinculado a la institución.</p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" id="modal-exito-otro">Registrar otro docente</button>
+      <a href="docenteadmi.html" class="btn btn-primary">Ir al Directorio</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/registrodoce.js"></script>
+</body>
+</html>

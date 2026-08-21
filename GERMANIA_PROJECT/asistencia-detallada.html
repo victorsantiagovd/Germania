@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Gestión de Aula - Germania</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body class="bg-background-light font-sans text-slate-900 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-primary text-white px-8 py-4 flex items-center justify-between sticky top-0 z-50 shadow-lg w-full">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-3xl">school</span>
+            <h1 class="text-xl font-extrabold tracking-tighter uppercase">GERMANIA</h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+                <button class="p-2 hover:bg-white/10 rounded-lg transition-colors relative">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-primary"></span>
+                </button>
+                <a href="configuracion.html" class="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">settings</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3 pl-6 border-l border-white/10">
+                <div class="text-right hidden sm:block">
+                    <p class="text-sm font-bold leading-none">Elena Rivas</p>
+                    <p class="text-[11px] text-slate-400 font-medium">Docente</p>
+                </div>
+                <div class="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 overflow-hidden shadow-inner">
+                    <img alt="User profile avatar of Elena Rivas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPAj2_XCZP4y-x1JcsKUs57iUOBA2N2YPmvLYuHbFCoJ6EOIVjCdmRlLo71-C6gLqeRSNxKAzX_-kwCres4eiVrkAtG_fap_ysk5VhWBzLrZTylu9Lb8-lA10TOjr693BUYr_xvzD_nJqpPosMSOCBSYd-QTadmuWeAIWJorZqUN9zLM2UaajctSbZY6Huz6k813If-nu7PqBcU1hz5BUdHa7Rt3e5oitsa0onexLsE6lHc4je9x5UmdtIXleJ9rO7YZqAIk0hVdc"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto w-full">
+        <div class="w-full px-8 py-8">
+            <div class="mb-6">
+                <a class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-bold transition-colors" href="mis-grupos.html">
+                    <span class="material-symbols-outlined text-xl">arrow_back</span>
+                    <span class="text-sm">Volver a Mis Grupos</span>
+                </a>
+            </div>
+
+            <!-- Page Title -->
+            <div class="mb-8">
+                <h2 class="text-3xl font-extrabold text-primary tracking-tight">Gestión de Aula</h2>
+                <p class="text-slate-500 font-medium mt-1">Gestión y visualización de estudiantes matriculados</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-white p-6 rounded-[12px] border border-slate-200 shadow-sm mb-8">
+                <div class="flex flex-col xl:flex-row xl:items-end gap-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 flex-1">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest">Sede</label>
+                            <select class="form-select w-full rounded-xl border-slate-200 bg-slate-50 text-sm focus:ring-primary focus:border-primary font-bold py-3">
+                                <option selected="">Sede Principal</option>
+                                <option>Sede Norte</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest">Grado</label>
+                            <select class="form-select w-full rounded-xl border-slate-200 bg-slate-50 text-sm focus:ring-primary focus:border-primary font-bold py-3">
+                                <option>8°</option>
+                                <option selected="">9°</option>
+                                <option>10°</option>
+                                <option>11°</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest">Grupo</label>
+                            <select class="form-select w-full rounded-xl border-slate-200 bg-slate-50 text-sm focus:ring-primary focus:border-primary font-bold py-3">
+                                <option selected="">A</option>
+                                <option>B</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest">Asignatura</label>
+                            <select class="form-select w-full rounded-xl border-slate-200 bg-slate-50 text-sm focus:ring-primary focus:border-primary font-bold py-3">
+                                <option selected="">Matemáticas</option>
+                                <option>Ciencias</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="xl:w-auto w-full">
+                        <button class="w-full xl:w-auto flex items-center justify-center gap-3 bg-primary text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary/95 transition-all shadow-xl shadow-primary/10">
+                            <span class="material-symbols-outlined text-xl">picture_as_pdf</span>
+                            <span>Exportar PDF</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central Action Buttons -->
+            <div class="flex flex-wrap gap-4 mb-8">
+                <button class="flex-1 md:flex-none flex items-center justify-center gap-3 bg-primary text-white px-6 py-4 rounded-2xl font-extrabold hover:bg-primary/90 transition-all shadow-lg">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span>Ver Listado Completo</span>
+                </button>
+                <button class="flex-1 md:flex-none flex items-center justify-center gap-3 bg-white border-2 border-red-600 text-red-600 px-6 py-4 rounded-2xl font-extrabold hover:bg-red-50 transition-all shadow-sm">
+                    <span class="material-symbols-outlined text-red-600">warning</span>
+                    <span>Filtrar Alertas de Riesgo</span>
+                </button>
+            </div>
+
+            <!-- Listing Table -->
+            <div class="bg-white rounded-[12px] shadow-sm border border-slate-200 overflow-hidden w-full">
+                <div class="p-5 border-b border-slate-100 bg-slate-50/30">
+                    <div class="relative max-w-md">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+                        <input class="w-full pl-12 pr-4 py-3 text-sm border-slate-200 bg-white rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none font-medium placeholder-slate-400 shadow-sm" placeholder="Buscar por nombre o documento..." type="text"/>
+                    </div>
+                </div>
+                <div class="overflow-x-auto overflow-visible">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50/80">
+                                <th class="px-8 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest border-b border-slate-100">Foto</th>
+                                <th class="px-8 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest border-b border-slate-100">Nombre Completo</th>
+                                <th class="px-8 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest border-b border-slate-100 text-center">Estado</th>
+                                <th class="px-8 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest border-b border-slate-100 text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <!-- Student in Risk (Juan Pérez) -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="px-8 py-5 whitespace-nowrap">
+                                    <div class="h-12 w-12 rounded-full overflow-hidden border-2 border-slate-100 shadow-sm">
+                                        <img alt="Student photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTunXBt-Lax502ugDp2CcXBN1g1c2RTA5rZNlgQcgkkdmU7bcVsvqedX9kr_4AfVfn6NmTDyyesEMuoqsxl2vulthyPlpQDtt3msw47jAHqcs1Ue-xqDKKQ7lzab83V6EjBf6RobEi7Uqg5ExvWlvfBdOCeYCMqJgostQ-KSGjMVzLzcQy7_Xcj4Qf80APm4bNnJKgLQc_l46xNPaYlWO53IKIRNSI5Gk0skTvGBmuEEEfhOjEhfAoxFw2FWDthIXwcwci4q9fPeM"/>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 whitespace-nowrap">
+                                    <div class="flex flex-col">
+                                        <span class="font-extrabold text-slate-800 text-sm">Juan Pérez</span>
+                                        <span class="text-xs text-slate-400 font-bold">TI 1065123456</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 whitespace-nowrap text-center relative overflow-visible group">
+                                    <!-- Tooltip handled via group-hover simple css, or JS if preferred -->
+                                    <span class="inline-flex px-4 py-1.5 text-[10px] font-black rounded-lg bg-red-600 text-white uppercase tracking-wide shadow-sm shadow-red-200 cursor-pointer">En Riesgo</span>
+                                    
+                                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-primary text-white p-4 rounded-xl shadow-2xl z-20 text-left hidden group-hover:block">
+                                        <div class="flex items-start gap-2 mb-2">
+                                            <span class="material-symbols-outlined text-amber-400 text-lg">warning</span>
+                                            <p class="text-[11px] font-extrabold uppercase tracking-tight">Detalle de Alerta</p>
+                                        </div>
+                                        <div class="space-y-1">
+                                            <p class="text-xs font-bold leading-tight">Notas: <span class="font-medium text-slate-300">Promedio Actual: 2.8</span></p>
+                                            <p class="text-xs font-bold leading-tight">Asistencia: <span class="font-medium text-slate-300">Total Faltas: 18%</span></p>
+                                        </div>
+                                        <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-primary"></div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 whitespace-nowrap text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button class="p-2.5 bg-red-50 text-red-600 hover:bg-red-100 rounded-xl transition-all" onclick="toggleMedicalModal()">
+                                            <span class="material-symbols-outlined text-2xl fill-1">medical_services</span>
+                                        </button>
+                                        <button class="p-2.5 text-slate-400 hover:bg-slate-100 rounded-xl transition-all">
+                                            <span class="material-symbols-outlined text-2xl">visibility</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Student Active -->
+                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                <td class="px-8 py-5 whitespace-nowrap">
+                                    <div class="h-12 w-12 rounded-full overflow-hidden border-2 border-slate-100 shadow-sm">
+                                        <img alt="Student photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUWITjRlgicL-NrGbAt2Cqq7CwU2b3I1dCG5h73Qh8YAqM9GrfgvtFKbQjKT4GRE9Or-zOQiGR1cELf2vI1sOM7oih46zjiiQMAtVTuQG8c2uxFHryjGTBm46OPVEA21FLvd7-dAma4EejqY24TWsDOoEE09cMeR_e67R30mpVR56mi01GvNO2TK4SUjeEfDlVKglvLWt9WBz81B_LJ6EOdjzkz-_F0S_JHdevKONq691DnzEk5m-ItRbfbelNV9qy9D31AufUUGM"/>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 whitespace-nowrap">
+                                    <div class="flex flex-col">
+                                        <span class="font-extrabold text-slate-800 text-sm">María García</span>
+                                        <span class="text-xs text-slate-400 font-bold">TI 1065987654</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 whitespace-nowrap text-center">
+                                    <span class="inline-flex px-3 py-1 text-[10px] font-black rounded-lg bg-emerald-100 text-emerald-700 uppercase tracking-wide">Activo</span>
+                                </td>
+                                <td class="px-8 py-5 whitespace-nowrap text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button class="p-2.5 bg-red-50 text-red-600 hover:bg-red-100 rounded-xl transition-all">
+                                            <span class="material-symbols-outlined text-2xl fill-1">medical_services</span>
+                                        </button>
+                                        <button class="p-2.5 text-slate-400 hover:bg-slate-100 rounded-xl transition-all">
+                                            <span class="material-symbols-outlined text-2xl">visibility</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Footer Pagination -->
+                <div class="px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6 bg-slate-50/50 border-t border-slate-100">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Total Estudiantes en Riesgo: <span class="text-red-600 font-black ml-1">1</span></p>
+                    <div class="flex items-center gap-2">
+                        <button class="px-4 py-2 rounded-xl border border-slate-200 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 bg-white cursor-not-allowed">Anterior</button>
+                        <div class="flex gap-1.5">
+                            <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-white text-xs font-black shadow-lg shadow-primary/20">1</button>
+                        </div>
+                        <button class="px-4 py-2 rounded-xl border border-slate-200 text-[11px] font-extrabold uppercase tracking-widest text-slate-400 bg-white cursor-not-allowed">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Institutional Footer -->
+        <footer class="mt-auto py-6 px-8 border-t border-slate-200 bg-white text-center">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">GERMANIA © 2026 Academic Monolith Management System</p>
+        </footer>
+    </main>
+
+    <!-- Medical File Modal -->
+    <div class="fixed inset-0 z-[100] hidden" id="medical-modal">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleMedicalModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            <div class="bg-red-600 px-8 py-6 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-3xl">medical_information</span>
+                    <h3 class="text-xl font-extrabold uppercase tracking-tight">Ficha Médica y de Emergencia</h3>
+                </div>
+                <button class="p-2 hover:bg-white/20 rounded-full transition-colors" onclick="toggleMedicalModal()">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="p-8">
+                <div class="flex gap-6 mb-8 items-start">
+                    <div class="size-24 rounded-2xl bg-slate-100 border-2 border-slate-200 overflow-hidden flex-shrink-0">
+                        <img alt="Student profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTunXBt-Lax502ugDp2CcXBN1g1c2RTA5rZNlgQcgkkdmU7bcVsvqedX9kr_4AfVfn6NmTDyyesEMuoqsxl2vulthyPlpQDtt3msw47jAHqcs1Ue-xqDKKQ7lzab83V6EjBf6RobEi7Uqg5ExvWlvfBdOCeYCMqJgostQ-KSGjMVzLzcQy7_Xcj4Qf80APm4bNnJKgLQc_l46xNPaYlWO53IKIRNSI5Gk0skTvGBmuEEEfhOjEhfAoxFw2FWDthIXwcwci4q9fPeM"/>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-black text-slate-900 leading-tight">Juan Pérez</h4>
+                        <p class="text-slate-500 font-bold">Grado 9° - Grupo A</p>
+                        <div class="mt-2 flex items-center gap-2">
+                            <span class="px-2 py-1 bg-red-50 text-red-700 text-[10px] font-black rounded uppercase border border-red-100">RH: O-</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-[10px] font-black rounded uppercase border border-blue-100">EPS: Sura</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h5 class="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="h-1.5 w-1.5 rounded-full bg-red-500"></span> Alergias y Restricciones
+                        </h5>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <p class="text-sm font-bold text-slate-700">Alergia severa al maní (Anafilaxia). Requiere EpiPen inmediato en caso de contacto.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Contacto de Emergencia
+                        </h5>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <p class="text-[10px] font-extrabold text-slate-400 uppercase">Padre</p>
+                                <p class="text-sm font-black text-slate-800">Ricardo Pérez</p>
+                                <p class="text-sm font-medium text-slate-500">312 456 7890</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <p class="text-[10px] font-extrabold text-slate-400 uppercase">Madre</p>
+                                <p class="text-sm font-black text-slate-800">Martha López</p>
+                                <p class="text-sm font-medium text-slate-500">315 987 6543</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 pt-6 border-t border-slate-100 flex justify-end">
+                    <button class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg" onclick="toggleMedicalModal()">Cerrar Ficha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMedicalModal() {
+            const modal = document.getElementById('medical-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body>
+</html>

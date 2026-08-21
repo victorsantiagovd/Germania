@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GERMANIA - Panel del Director de Grupo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body class="bg-surface text-on-surface">
+    <!-- TopNavBar -->
+    <nav class="bg-gradient-to-br from-[#000666] to-[#1a237e] dark:from-slate-950 dark:to-slate-900 text-white dark:text-blue-100 docked full-width top-0 z-50 flex justify-between items-center w-full px-8 py-4 shadow-xl shadow-[#000666]/10 dark:shadow-none fixed">
+        <div class="flex items-center gap-8">
+            <span class="text-2xl font-black tracking-tighter text-white dark:text-white">GERMANIA</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex gap-4 items-center">
+                <button class="material-symbols-outlined p-2 rounded-full hover:bg-white/10 transition-colors duration-200" data-icon="notifications">notifications</button>
+                <a href="configuracion.html" class="material-symbols-outlined p-2 rounded-full hover:bg-white/10 transition-colors duration-200" data-icon="settings">settings</a>
+            </div>
+            <div class="flex items-center gap-3 bg-white/10 py-1.5 pl-4 pr-1.5 rounded-full border border-white/10">
+                <span class="text-sm font-medium font-body uppercase tracking-wider">Elena</span>
+                <img alt="Elena's profile photo" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxmXrcqG-59eN9R5Pf3LTogx_yA1EAKrtvYnKRYTvgLdhuDozacYUrMCbWnCRI96YEqRdgl39oHWGwrbJP71rgZfQTZOyj0XgYuszQrxbn3iDs7Qn1jZe3ox4bMRxqnXcigAQXiKb756Ds6gc6xbfXDecezxf_iFqG9hV8qf3O0-T5VSGmoxJHy2mrWLZQmIBu4QtSSOTF_xHmW1xbqSdnqy5W0px5Ex6PAu4Firwog8Mawp6zAz0OqN8YRPMcOnybCDoJrbwuhOc"/>
+            </div>
+            <button class="material-symbols-outlined p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 text-white flex items-center justify-center" title="Cerrar Sesión">logout</button>
+        </div>
+    </nav>
+    <div class="flex min-h-screen pt-20">
+        <!-- SideNavBar -->
+        <aside class="bg-[#f2f4f6] dark:bg-slate-900/50 text-[#000666] dark:text-blue-400 w-72 border-r-0 flex flex-col h-full fixed top-0 left-0 pt-20 pb-8 px-4 transition-all duration-300">
+            <div class="mb-10 px-4">
+                <h2 class="text-lg font-bold font-body text-[#000666] dark:text-white">Panel del Docente</h2>
+                <p class="text-slate-500 dark:text-slate-400 font-medium text-xs">Director de Grupo</p>
+            </div>
+            <nav class="flex-1 space-y-1">
+                <a class="flex items-center gap-3 px-4 py-3 text-[#000666] dark:text-white border-l-4 border-[#000666] dark:border-blue-500 font-bold bg-white/50 dark:bg-white/5 scale-[0.98] transition-transform duration-150" href="index.html">
+                    <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    <span class="text-sm font-semibold font-manrope">Inicio</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:text-[#000666] dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors duration-200" href="mis-grupos.html">
+                    <span class="material-symbols-outlined" data-icon="group">group</span>
+                    <span class="text-sm font-semibold font-manrope">Mis Grupos</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:text-[#000666] dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors duration-200" href="planilla-notas.html">
+                    <span class="material-symbols-outlined" data-icon="grading">grading</span>
+                    <span class="text-sm font-semibold font-manrope">Planilla de Notas</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:text-[#000666] dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors duration-200" href="asistencia.html">
+                    <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+                    <span class="text-sm font-semibold font-manrope">Asistencia</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:text-[#000666] dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors duration-200" href="reportes.html">
+                    <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    <span class="text-sm font-semibold font-manrope">Reportes</span>
+                </a>
+            </nav>
+            <div class="mt-auto border-t border-slate-200/50 pt-4">
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:text-error transition-colors duration-200" href="#">
+                    <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    <span class="text-sm font-semibold font-manrope">Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Canvas Content -->
+        <main class="flex-1 ml-72 p-10 bg-surface">
+            <!-- Welcome Banner -->
+            <section class="mb-10 relative overflow-hidden bg-primary-container rounded-xl p-10 text-white flex justify-between items-center shadow-lg">
+                <div class="z-10">
+                    <h1 class="text-4xl font-extrabold tracking-tight mb-2">Hola Elena,</h1>
+                    <p class="text-lg font-medium text-blue-100/90">Hoy te encuentras en la Sede Principal. Tienes 4 clases programadas.</p>
+                </div>
+                <div class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
+                    <span class="material-symbols-outlined text-[12rem]" data-icon="school">school</span>
+                </div>
+                <button class="z-10 bg-white text-primary px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors">Ver Calendario</button>
+            </section>
+            <div class="grid grid-cols-12 gap-8">
+                <!-- Left Column: Content -->
+                <div class="col-span-8 space-y-10">
+                    <!-- Summary Cards -->
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="bg-surface-container-lowest p-5 rounded-xl border-l-4 border-primary shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary text-xl" data-icon="groups">groups</span>
+                                </div>
+                                <div class="flex items-center gap-1 overflow-hidden">
+                                    <span class="text-[10px] font-bold text-slate-500 uppercase truncate">Total Alumnos</span>
+                                    <span class="material-symbols-outlined text-[14px] text-slate-400 cursor-help" data-icon="info">info</span>
+                                </div>
+                            </div>
+                            <p class="text-3xl font-extrabold text-on-surface leading-tight">120</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-1">En tus 4 grupos asignados</p>
+                        </div>
+                        <div class="bg-surface-container-lowest p-5 rounded-xl border-l-4 border-surface-tint shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary text-xl" data-icon="auto_graph">auto_graph</span>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-500 uppercase truncate">Promedio Grupos</span>
+                            </div>
+                            <p class="text-3xl font-extrabold text-on-surface leading-tight">4.1</p>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full mt-3">
+                                <div class="bg-surface-tint h-full rounded-full w-[82%]"></div>
+                            </div>
+                        </div>
+                        <div class="bg-error-container p-5 rounded-xl border-l-4 border-error shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-error text-xl" data-icon="warning">warning</span>
+                                </div>
+                                <span class="text-[10px] font-bold text-on-error-container uppercase truncate">Inasistencias</span>
+                            </div>
+                            <p class="text-3xl font-extrabold text-on-error-container leading-tight">3</p>
+                            <p class="text-[10px] text-error/70 font-medium mt-1">Alertas críticas hoy</p>
+                        </div>
+                        <!-- Card 4: Mi Grupo Directivo -->
+                        <div class="bg-green-50 p-5 rounded-xl border-l-4 border-green-500 shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-green-700 text-xl" data-icon="flag">flag</span>
+                                </div>
+                                <span class="text-[10px] font-bold text-green-700 uppercase truncate">Mi Grupo: 11-A</span>
+                            </div>
+                            <p class="text-3xl font-extrabold text-green-900 leading-tight">4.0</p>
+                            <div class="mt-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-[9px] font-bold text-green-700 uppercase">Convivencia</span>
+                                    <span class="text-[9px] font-bold text-green-700">90% Positiva</span>
+                                </div>
+                                <div class="w-full bg-green-200 h-1.5 rounded-full">
+                                    <div class="bg-green-500 h-full rounded-full w-[90%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Today's Classes Vertical Timeline -->
+                    <section>
+                        <div class="flex justify-between items-end mb-6">
+                            <h3 class="text-2xl font-bold tracking-tight">Mis Clases de Hoy</h3>
+                            <span class="text-sm font-medium text-slate-400">Martes, 24 Octubre</span>
+                        </div>
+                        <div class="bg-surface-container-low rounded-xl p-8 space-y-6">
+                            <div class="flex gap-6 items-start">
+                                <div class="w-20 text-right shrink-0">
+                                    <p class="text-sm font-bold text-on-surface">07:00 AM</p>
+                                    <p class="text-xs text-slate-400">08:30 AM</p>
+                                </div>
+                                <div class="relative pt-1">
+                                    <div class="w-3 h-3 rounded-full bg-primary mt-1"></div>
+                                    <div class="absolute top-4 left-1.5 w-0.5 h-full bg-slate-200"></div>
+                                </div>
+                                <div class="bg-surface-container-lowest flex-1 p-5 rounded-xl border border-outline-variant/10">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h4 class="font-bold text-primary">Matemáticas 9° - A</h4>
+                                            <p class="text-sm text-slate-500">Tema: Ecuaciones Cuadráticas</p>
+                                        </div>
+                                        <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-full">SALÓN 204</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 items-start">
+                                <div class="w-20 text-right shrink-0">
+                                    <p class="text-sm font-bold text-on-surface">09:00 AM</p>
+                                    <p class="text-xs text-slate-400">10:30 AM</p>
+                                </div>
+                                <div class="relative pt-1">
+                                    <div class="w-3 h-3 rounded-full bg-surface-tint mt-1"></div>
+                                    <div class="absolute top-4 left-1.5 w-0.5 h-full bg-slate-200"></div>
+                                </div>
+                                <div class="bg-surface-container-lowest flex-1 p-5 rounded-xl border border-outline-variant/10">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h4 class="font-bold text-primary">Física 10° - B</h4>
+                                            <p class="text-sm text-slate-500">Tema: Leyes de Newton</p>
+                                        </div>
+                                        <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-full">LABORATORIO 1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Groups Section -->
+                    <section>
+                        <h3 class="text-2xl font-bold tracking-tight mb-6">Mis Grupos</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-slate-100">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
+                                        <img alt="Math icon" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOyqYZFLZdBcJ0euVjmovLWf8_8e4sT9FBsMyHJSVy9BqKddcqQlJpbU9slF58PisWjGVGkZcZLVLyb2azJTDnRXt8f2u3dNLhCMKODcmuJcC0p_Iq6VGrSVe7qHCuMHzpiNK3oNW67iiyR8ygcA6hzjeo-7XP1rNoH5lAWGenx7JedAfP1o-rYs_cLglUJbnlKV9crRvxTHmjt8xqZjm1-nlWKV3ab4xzMXsfaXBF03a2E-n327eg3Ot7tw_5Z2PFRvXkZVQI0wI"/>
+                                    </div>
+                                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">42 Alumnos</span>
+                                </div>
+                                <h4 class="text-xl font-extrabold mb-1">Matemáticas 9°</h4>
+                                <p class="text-sm text-slate-500 mb-6">Grado Noveno • Sección A</p>
+                                <a href="mis-grupos.html" class="block text-center w-full bg-primary text-white py-3 rounded-lg font-bold text-sm transition-all active:scale-95">Ver Grupo</a>
+                            </div>
+                            <div class="group relative overflow-hidden bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-slate-100">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center">
+                                        <img alt="Physics icon" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnzNGQcLe5VBR4Oxd0Z3RpSH7JFbk-YCJD99lqs_8N2qJ95TSgiR3bRaNXm0Exp_rzwATxZKEpcuosKQbiSuTrxh4ooF1stFTY6yZzqx9vNqDGlz5rElCD9cQQwdNlN8JCJLP26cRtheA6QBeT5jwl3UuVd0w1bclwbtDn31i62SXCxmyquWvadl7-oIJMS_SG7WZ5gWKikFb_UitQydgiUhiclZWUP0uBadl9a0xp5eSLnNbazMj5zJ-2vBAmh3ReqMkHkXdMNDE"/>
+                                    </div>
+                                    <span class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-full">38 Alumnos</span>
+                                </div>
+                                <h4 class="text-xl font-extrabold mb-1">Física 10°</h4>
+                                <p class="text-sm text-slate-500 mb-6">Grado Décimo • Sección B</p>
+                                <a href="mis-grupos.html" class="block text-center w-full bg-primary text-white py-3 rounded-lg font-bold text-sm transition-all active:scale-95">Ver Grupo</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Right Column: Widgets -->
+                <aside class="col-span-4 space-y-8">
+                    <!-- Performance Alerts Widget -->
+                    <div class="bg-surface-container-high rounded-2xl p-6 border border-white shadow-sm">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary" data-icon="monitoring">monitoring</span>
+                            <h3 class="text-lg font-bold font-headline">Alertas de Rendimiento</h3>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-6 leading-relaxed">Estudiantes con promedio por debajo del umbral institucional (3.5).</p>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-xl flex items-center gap-4 border border-slate-100">
+                                <img alt="Student photo" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2sgA-NOmQd94t20qr64ZWYY7A16_TTSb_DD9k8PyzTl-_zr8mCEJFsOOr4EYSfPzwVf5VDAJCXQFpxUAQFJ0K44xf9vIbd0SGbsnKwWcwx7bZ7iwJ7uJBZVEgLtoSVnqaGbg_e1JqfAsywLcZsW3qn4NzvDrQ-30oLHPWuTuVotkhvLSv2QagurvKgxodkewca84CzFWg-wlPHS26YW0NHy0SZ5jkqvOY2Z3EJAWCm5eGLf0JieR3ZkgNltVqCYT_RfEOHCjPGx8"/>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-on-surface">Carlos Ruiz</p>
+                                    <p class="text-[10px] text-slate-400 font-semibold uppercase">Matemáticas 9°</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-black text-error">2.8</p>
+                                    <span class="material-symbols-outlined text-xs text-error" data-icon="trending_down">trending_down</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl flex items-center gap-4 border border-slate-100">
+                                <img alt="Student photo" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLHogFWfvvyNMEq099X1DMU0nUGoYYChO1XKQiNxE-eVFSR03gFMm-mbGixUKP_nDQqzQGHDWnCFIXSF0kvETw7z9cF9k_n79SOZIVr43IMRaAMIuGlD8zNhXxGH7PmCzcM_DwkzQHme8Vih9yD0EDeLhEzLLYaRDPG7o4cw4p27Z0oID-pTaIKtnJZky1XW3IYFxh06rGwkrIUJdqB9AfEZiVFVu6DmzNb3GjIMRq5eU89CWZNzXr6sGSeqIQjOTIxhaT_oxiseA"/>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-on-surface">Ana Martínez</p>
+                                    <p class="text-[10px] text-slate-400 font-semibold uppercase">Física 10°</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-black text-error">3.1</p>
+                                    <span class="material-symbols-outlined text-xs text-error" data-icon="trending_down">trending_down</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl flex items-center gap-4 border border-slate-100">
+                                <img alt="Student photo" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX-Lc1GLQ1QLYN-7FoAva0HmYQzRH0aop6yjkmfukSNi2rVe3ov0wcyzBglQSy1qXQVwcTv1aOWu2z4Or2Mh1fAWdUgrUumsKzuctkEIfSY7YrcweosRiAw-sKRyZC_fp11cLAC7XL4MrRWciHhAVrINq66M7Dwqspo5G3UVROf5rN2Mg-2re402GQF4LjDXUOIESW7JLFtMLCigUak2v0oWBMS7kmV_cSFb8_fSeC8cSyTw5YIC_XOcoMTK1EJCVKtOmDLO9mQRY"/>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-on-surface">Sofía Giraldo</p>
+                                    <p class="text-[10px] text-slate-400 font-semibold uppercase">Matemáticas 9°</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-black text-error">3.2</p>
+                                    <span class="material-symbols-outlined text-xs text-error" data-icon="trending_down">trending_down</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="reportesprofe.html" class="block text-center w-full mt-6 py-2 text-xs font-bold text-primary hover:bg-primary/5 transition-colors rounded-lg">Generar Reporte Detallado</a>
+                    </div>
+                    <!-- Institutional Message / Tip -->
+                    <div class="bg-secondary-fixed p-6 rounded-2xl">
+                        <span class="material-symbols-outlined text-on-secondary-container mb-3" data-icon="lightbulb">lightbulb</span>
+                        <h4 class="text-sm font-bold text-on-secondary-container mb-2">Tip de Productividad</h4>
+                        <p class="text-xs text-on-secondary-container/80 leading-relaxed">Recuerda que puedes subir tus notas directamente desde la planilla móvil durante la clase para ahorrar tiempo administrativo.</p>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

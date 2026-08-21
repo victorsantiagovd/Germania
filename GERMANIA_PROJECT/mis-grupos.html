@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GERMANIA - Mis Grupos</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+    <!-- TopNavBar -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 bg-gradient-to-br from-[#000666] to-[#1a237e] dark:from-slate-950 dark:to-indigo-950 h-16 shadow-lg dark:shadow-none">
+        <div class="flex items-center gap-4">
+            <span class="text-2xl font-bold tracking-tight text-white font-manrope uppercase">GERMANIA</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-white/70">
+                <button class="p-2 hover:bg-white/10 rounded-full transition-all active:scale-95 duration-150 ease-in-out">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                </button>
+                <a href="configuracion.html" class="p-2 hover:bg-white/10 rounded-full transition-all active:scale-95 duration-150 ease-in-out">
+                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3 pl-4 border-l border-white/10">
+                <div class="text-right hidden sm:block">
+                    <p class="text-sm font-bold text-white font-manrope leading-tight">Elena Rivas</p>
+                    <p class="text-[10px] font-medium text-white/70 uppercase tracking-wider">Docente Titular</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-white/20 border-2 border-white/30 overflow-hidden">
+                    <img alt="Elena Rivas profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHqv2GlfVx51mv4qkMY-dMkkacr4ZM6jolWjL2GyJ1AasQGQnCuGdGx5pEyYwYdxuOL7nk4xvEBRNqL4gcpWlMvS3lskIvFC6I8wHUAbb-J5HlKph0T6XHUkgj9-fZ-AcEND2MtJO_MxxIytkRXd7C3TG8gZH40rQtCUM66vqOQvSpu02WysYlA2oFevkhSoHiJl2quu4nF2ohXpNmRS6lYkiZryNSEzNrSzRgccAT34s44qktbLd5zrN_M8Ea2CqgOZe2G1eBtZg"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Sidebar -->
+    <aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col py-8 bg-[#f2f4f6] dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800">
+        <nav class="flex-1 px-4 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#000666] dark:hover:text-indigo-300 hover:bg-white/50 dark:hover:bg-slate-800 transition-all rounded-lg group" href="index.html">
+                <span class="material-symbols-outlined" data-icon="home">home</span>
+                <span class="text-sm font-semibold font-manrope">Inicio</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-[#000666] dark:text-indigo-400 border-l-4 border-[#000666] dark:border-indigo-400 bg-white dark:bg-slate-800 font-bold translate-x-1 duration-200 rounded-r-lg group" href="mis-grupos.html">
+                <span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+                <span class="text-sm font-semibold font-manrope">Mis Grupos</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#000666] dark:hover:text-indigo-300 hover:bg-white/50 dark:hover:bg-slate-800 transition-all rounded-lg" href="planilla-notas.html">
+                <span class="material-symbols-outlined" data-icon="table_chart">table_chart</span>
+                <span class="text-sm font-semibold font-manrope">Planilla de Notas</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#000666] dark:hover:text-indigo-300 hover:bg-white/50 dark:hover:bg-slate-800 transition-all rounded-lg" href="asistencia.html">
+                <span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+                <span class="text-sm font-semibold font-manrope">Asistencia</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#000666] dark:hover:text-indigo-300 hover:bg-white/50 dark:hover:bg-slate-800 transition-all rounded-lg" href="reportes.html">
+                <span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+                <span class="text-sm font-semibold font-manrope">Reportes</span>
+            </a>
+        </nav>
+        <div class="px-4 mt-auto border-t border-slate-200 dark:border-slate-800 pt-4">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-error transition-all" href="#">
+                <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                <span class="text-sm font-semibold font-manrope">Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-16 h-screen flex flex-col bg-surface overflow-y-auto">
+        <!-- Filter Header Section -->
+        <section class="bg-surface-container-lowest border-b border-outline-variant/15 px-8 py-6 z-10 shadow-sm">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-wrap items-end gap-4">
+                    <div class="flex-1 min-w-[200px]">
+                        <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Sede</label>
+                        <div class="relative">
+                            <select class="w-full h-12 px-4 bg-surface-container-high text-on-surface border-none rounded-xl appearance-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-sm">
+                                <option>Sede Principal - Centro</option>
+                                <option>Sede Norte</option>
+                                <option>Sede Virtual</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-[150px]">
+                        <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Grupo</label>
+                        <div class="relative">
+                            <select class="w-full h-12 px-4 bg-surface-container-high text-on-surface border-none rounded-xl appearance-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-sm">
+                                <option disabled="" selected="">Seleccionar grupo</option>
+                                <option>Grado 10 - A</option>
+                                <option>Grado 10 - B</option>
+                                <option>Grado 11 - A</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-[200px]">
+                        <label class="block text-[11px] font-bold text-primary uppercase tracking-widest mb-2 px-1 flex items-center gap-1">
+                            Asignatura
+                            <span class="text-error font-bold">*</span>
+                        </label>
+                        <div class="relative">
+                            <select class="w-full h-12 px-4 bg-surface-container-high text-on-surface border-none rounded-xl appearance-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-sm">
+                                <option disabled="" selected="">Seleccionar materia</option>
+                                <option>Matemáticas Superiores</option>
+                                <option>Física Cuántica Intro</option>
+                                <option>Cálculo Integral</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-[150px]">
+                        <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Periodo</label>
+                        <div class="relative">
+                            <select class="w-full h-12 px-4 bg-surface-container-high text-on-surface border-none rounded-xl appearance-none focus:ring-2 focus:ring-primary/20 transition-all font-medium text-sm">
+                                <option>Primer Periodo 2024</option>
+                                <option>Segundo Periodo 2024</option>
+                                <option>Tercer Periodo 2024</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+                        </div>
+                    </div>
+                    <button class="h-12 px-8 bg-[#000666] text-white font-bold font-manrope rounded-xl hover:shadow-lg hover:bg-primary-container transition-all active:scale-95 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+                        Consultar
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Group Grid -->
+        <div class="p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto w-full">
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col h-full border border-slate-100">
+                <div class="absolute top-0 right-0 p-4">
+                    <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase">Sede Principal</span>
+                </div>
+                <div class="flex items-start gap-5 mb-6">
+                    <div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center text-white shrink-0">
+                        <span class="material-symbols-outlined text-3xl">calculate</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">Matemáticas 9-A</h3>
+                        <p class="text-sm text-on-surface-variant font-medium">Bachillerato Académico</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 mb-8">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Alumnos</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary text-lg">person</span>
+                            <span class="text-xl font-bold text-primary">32</span>
+                        </div>
+                    </div>
+                    <div class="w-px h-10 bg-surface-container-high self-end"></div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Asistencia</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-on-tertiary-container text-lg fill-1">favorite</span>
+                            <span class="text-xl font-bold text-primary">94%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a href="asistencia.html" class="bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 sm:col-span-2">
+                        <span class="material-symbols-outlined text-sm">how_to_reg</span> Pasar Asistencia
+                    </a>
+                    <a href="planilla-notas.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">list_alt</span> Planilla
+                    </a>
+                    <a href="panelprofesor.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        Gestión Aula
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col h-full border border-slate-100">
+                <div class="absolute top-0 right-0 p-4">
+                    <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase">Sede Principal</span>
+                </div>
+                <div class="flex items-start gap-5 mb-6">
+                    <div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center text-white shrink-0">
+                        <span class="material-symbols-outlined text-3xl">science</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">Física 10-B</h3>
+                        <p class="text-sm text-on-surface-variant font-medium">Educación Media</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 mb-8">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Alumnos</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary text-lg">person</span>
+                            <span class="text-xl font-bold text-primary">28</span>
+                        </div>
+                    </div>
+                    <div class="w-px h-10 bg-surface-container-high self-end"></div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Asistencia</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-on-tertiary-container text-lg fill-1">favorite</span>
+                            <span class="text-xl font-bold text-primary">89%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a href="asistencia.html" class="bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 sm:col-span-2">
+                        <span class="material-symbols-outlined text-sm">how_to_reg</span> Pasar Asistencia
+                    </a>
+                    <a href="planilla-notas.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">list_alt</span> Planilla
+                    </a>
+                    <a href="panelprofesor.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        Gestión Aula
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col h-full border border-slate-100">
+                <div class="absolute top-0 right-0 p-4">
+                    <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold px-3 py-1 rounded-full uppercase">Sede Rural</span>
+                </div>
+                <div class="flex items-start gap-5 mb-6">
+                    <div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center text-white shrink-0">
+                        <span class="material-symbols-outlined text-3xl">function</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">Matemáticas 8-C</h3>
+                        <p class="text-sm text-on-surface-variant font-medium">Post-primaria Rural</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 mb-8">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Alumnos</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary text-lg">person</span>
+                            <span class="text-xl font-bold text-primary">24</span>
+                        </div>
+                    </div>
+                    <div class="w-px h-10 bg-surface-container-high self-end"></div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Asistencia</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-on-tertiary-container text-lg fill-1">favorite</span>
+                            <span class="text-xl font-bold text-primary">97%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a href="asistencia.html" class="bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 sm:col-span-2">
+                        <span class="material-symbols-outlined text-sm">how_to_reg</span> Pasar Asistencia
+                    </a>
+                    <a href="planilla-notas.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">list_alt</span> Planilla
+                    </a>
+                    <a href="panelprofesor.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        Gestión Aula
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col h-full border border-slate-100">
+                <div class="absolute top-0 right-0 p-4">
+                    <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold px-3 py-1 rounded-full uppercase">Sede Rural</span>
+                </div>
+                <div class="flex items-start gap-5 mb-6">
+                    <div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center text-white shrink-0">
+                        <span class="material-symbols-outlined text-3xl">architecture</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">Geometría 7-A</h3>
+                        <p class="text-sm text-on-surface-variant font-medium">Básica Secundaria</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 mb-8">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Alumnos</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary text-lg">person</span>
+                            <span class="text-xl font-bold text-primary">30</span>
+                        </div>
+                    </div>
+                    <div class="w-px h-10 bg-surface-container-high self-end"></div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Asistencia</p>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-on-tertiary-container text-lg fill-1">favorite</span>
+                            <span class="text-xl font-bold text-primary">91%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a href="asistencia.html" class="bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 sm:col-span-2">
+                        <span class="material-symbols-outlined text-sm">how_to_reg</span> Pasar Asistencia
+                    </a>
+                    <a href="planilla-notas.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">list_alt</span> Planilla
+                    </a>
+                    <a href="panelprofesor.html" class="bg-surface-container-low text-primary py-3 rounded-lg font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        Gestión Aula
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Academic Monolith Footer Gutter -->
+        <footer class="h-12 mt-auto bg-surface px-8 flex items-center justify-between text-[10px] font-bold text-outline uppercase tracking-widest border-t border-outline-variant/5 shrink-0">
+            <div>GERMANIA EDUCATIONAL SYSTEM © 2024</div>
+            <div class="flex gap-4">
+                <span>VERSIÓN 4.2.0</span>
+                <span>SOPORTE TÉCNICO</span>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

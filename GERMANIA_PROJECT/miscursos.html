@@ -4,30 +4,40 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mis Cursos · IE Germania</title>
+
+<!-- Importación de fuentes tipográficas desde Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+
+<!-- Hojas de estilo CSS (Variables, estilos generales y responsive) -->
 <link rel="stylesheet" href="css/variables.css" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/responsive.css" />
+
+<!-- Control y verificación de sesión del estudiante -->
 <script src="js/auth.js"></script>
 
 </head>
 <body>
 
+<!-- Contenedor principal de la aplicación -->
 <div class="app">
 
-  <!-- SIDEBAR -->
+  <!-- ==================== BARRA LATERAL (SIDEBAR) ==================== -->
   <aside class="sidebar">
+    <!-- Identidad institucional / Marca -->
     <div class="sidebar__brand">
       <div class="sidebar__brand-name">IE GERMANIA</div>
       <div class="sidebar__brand-sub">PORTAL ESTUDIANTIL</div>
     </div>
 
+    <!-- Menú de navegación principal -->
     <nav class="sidebar__nav">
       <a href="inicio-estudiante.html" class="nav-item" data-nav>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V21h14V9.5"/></svg>
         Inicio
       </a>
+      <!-- Enlace activo indicando la sección actual -->
       <a href="miscursos.html" class="nav-item is-active" data-nav>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
         Mis Cursos
@@ -46,6 +56,7 @@
       </a>
     </nav>
 
+    <!-- Opciones de configuración y salida del sistema -->
     <div class="sidebar__footer">
       <a href="ajustes.html" class="nav-item">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
@@ -55,6 +66,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4"/><path d="M12 17h.01"/></svg>
         Ayuda
       </a>
+      <!-- Botón para finalizar sesión -->
       <a href="#" id="logoutBtn" class="nav-item nav-item--danger">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
         Cerrar Sesión
@@ -62,19 +74,24 @@
     </div>
   </aside>
 
-  <!-- MAIN -->
+  <!-- ==================== CONTENIDO PRINCIPAL (MAIN) ==================== -->
   <main class="main">
+    
+    <!-- Encabezado superior con búsqueda y usuario -->
     <div class="topbar">
+      <!-- Buscador rápido en la barra superior -->
       <label class="search-box">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         <input type="text" placeholder="Buscar en mis cursos..." />
       </label>
 
+      <!-- Botón con indicador de notificaciones -->
       <button class="icon-btn" aria-label="Notificaciones">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
         <span class="dot"></span>
       </button>
 
+      <!-- Perfil del usuario activo -->
       <div class="user-chip">
         <img class="user-chip__avatar" src="https://i.pravatar.cc/72?img=13" alt="Foto de Mateo Alemán" />
         <div>
@@ -84,16 +101,21 @@
       </div>
     </div>
 
+    <!-- Título y descripción del plan de estudios -->
     <div class="page-header">
       <h1>Plan de Estudios Bachillerato</h1>
       <p>Gestione su progreso académico en las materias del núcleo común y especializado del grado undécimo.</p>
     </div>
 
+    <!-- Barra de herramientas para filtrado de materias -->
     <div class="toolbar">
+      <!-- Filtro dinámico por texto -->
       <label class="filter-input">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         <input type="text" id="courseSearch" placeholder="Filtrar por nombre de materia..." />
       </label>
+
+      <!-- Botones de categoría (Chips) para filtrado rápido -->
       <button class="chip is-active" data-area="todas">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         Todas las áreas
@@ -102,8 +124,10 @@
       <button class="chip" data-area="humanidades">Humanidades</button>
     </div>
 
+    <!-- ==================== CUADRÍCULA DE CURSOS (COURSE GRID) ==================== -->
     <div class="course-grid">
 
+      <!-- Tarjeta: Trigonometría y Cálculo -->
       <article class="course-card" data-title="Trigonometría y Cálculo" data-area="ciencias">
         <div class="course-card__top">
           <div class="course-card__icon">
@@ -120,6 +144,7 @@
         </div>
       </article>
 
+      <!-- Tarjeta: Química Orgánica -->
       <article class="course-card" data-title="Química Orgánica" data-area="ciencias">
         <div class="course-card__top">
           <div class="course-card__icon">
@@ -136,6 +161,7 @@
         </div>
       </article>
 
+      <!-- Tarjeta: Filosofía y Ética -->
       <article class="course-card" data-title="Filosofía y Ética" data-area="humanidades">
         <div class="course-card__top">
           <div class="course-card__icon">
@@ -152,6 +178,7 @@
         </div>
       </article>
 
+      <!-- Tarjeta: Lengua y Literatura -->
       <article class="course-card" data-title="Lengua y Literatura" data-area="humanidades">
         <div class="course-card__top">
           <div class="course-card__icon">
@@ -168,6 +195,7 @@
         </div>
       </article>
 
+      <!-- Tarjeta: Biología Celular -->
       <article class="course-card" data-title="Biología Celular" data-area="ciencias">
         <div class="course-card__top">
           <div class="course-card__icon">
@@ -184,6 +212,7 @@
         </div>
       </article>
 
+      <!-- Tarjeta: Economía Política -->
       <article class="course-card" data-title="Economía Política" data-area="humanidades">
         <div class="course-card__top">
           <div class="course-card__icon">
@@ -203,8 +232,9 @@
     </div>
   </main>
 
-  <!-- RIGHT PANEL -->
+  <!-- ==================== PANEL DERECHO (RIGHTBAR) ==================== -->
   <aside class="rightbar">
+    <!-- Listado de tareas y entregas pendientes -->
     <div class="panel">
       <div class="panel__header">
         <div class="panel__title">
@@ -214,6 +244,7 @@
         <a href="tareas.html" class="panel__link">Ver todo</a>
       </div>
 
+      <!-- Tarea urgente -->
       <div class="task">
         <div>
           <div class="task__eyebrow">QUÍMICA ORGÁNICA</div>
@@ -226,6 +257,7 @@
         <svg class="task__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </div>
 
+      <!-- Tarea programada -->
       <div class="task">
         <div>
           <div class="task__eyebrow">CÁLCULO</div>
@@ -239,6 +271,7 @@
       </div>
     </div>
 
+    <!-- Sección promocional / Orientación vocacional -->
     <div class="promo">
       <div class="promo__icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="1"/><path d="M5 20a7 7 0 0 1 14 0"/><path d="M9 12h6v8H9z"/></svg>
@@ -254,6 +287,7 @@
 
 </div>
 
+<!-- Scripts de interacción y comportamiento -->
 <script src="js/menu.js"></script>
 <script src="js/app.js"></script>
 </body>

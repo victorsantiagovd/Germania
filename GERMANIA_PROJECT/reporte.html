@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro de Reportes y Auditoría · EduLedger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- Fondo para móvil -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11"/></svg>
+      </div>
+    </div>
+    <nav class="nav-group">
+      <a class="nav-link" href="paneladmin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Inicio
+      </a>
+      <a class="nav-link" href="instituadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="21" x2="21" y2="21"/><line x1="5" y1="21" x2="5" y2="10"/><line x1="19" y1="21" x2="19" y2="10"/><polygon points="12 3 21 9 3 9"/></svg>
+        Institución
+      </a>
+      <a class="nav-link" href="matriculadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8.5" cy="11" r="2.2"/><line x1="5.5" y1="17" x2="11.5" y2="17"/></svg>
+        Matrículas
+      </a>
+      <a class="nav-link" href="docenteadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+        Docentes
+      </a>
+      <a class="nav-link active" href="reporte.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Reportes
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <!-- Header de la página -->
+    <div class="page-header">
+      <div>
+        <h1>Centro de Reportes y Auditoría</h1>
+        <p class="subtitle">Módulo de control legal y administrativo para la gestión de certificaciones institucionales y trazabilidad de operaciones del sistema.</p>
+      </div>
+    </div>
+
+    <!-- Sección de Tarjetas Superiores -->
+    <div class="reports-top-grid">
+      <!-- Tarjeta 1: Generación Masiva -->
+      <section class="card reports-card">
+        <div class="reports-card-header">
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h2>Generación masiva de boletines</h2>
+          </div>
+          <span class="period-tag">PERIODO ACADÉMICO 2024</span>
+        </div>
+
+        <div class="reports-form-grid">
+          <div class="field-group">
+            <label for="nivelEducativo">NIVEL EDUCATIVO</label>
+            <div class="select-wrapper">
+              <select id="nivelEducativo">
+                <option value="media">Educación Media General</option>
+                <option value="primaria">Educación Primaria</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="seccionCurso">SECCIÓN / CURSO</label>
+            <div class="select-wrapper">
+              <select id="seccionCurso">
+                <option value="5a">5to Año - A</option>
+                <option value="5b">5to Año - B</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="reports-card-footer">
+          <div class="students-detected">
+            <span class="dot-indicator"></span>
+            <span id="detectedCount">45 alumnos detectados</span>
+          </div>
+          <button class="btn btn-primary" id="btnBoletines">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Procesar Boletines
+          </button>
+        </div>
+      </section>
+
+      <!-- Tarjeta 2: Certificados Legales -->
+      <section class="card cert-card">
+        <div class="cert-watermark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="cert-header">
+          <div class="cert-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h2>Certificados Legales</h2>
+        </div>
+        <p class="cert-desc">Emisión inmediata de certificados de conducta, estudios y notas certificadas con firma digital institucional.</p>
+        
+        <div class="cert-actions">
+          <button class="cert-btn" id="btnConstancia">
+            <span>Constancia de Estudio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </button>
+          <button class="cert-btn" id="btnNotas">
+            <span>Notas Certificadas</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Tabla: Logs de Actividad -->
+    <section class="card logs-section">
+      <div class="logs-header">
+        <div class="logs-title">
+          <div class="card-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h2>Logs de actividad del sistema</h2>
+        </div>
+        <div class="logs-toolbar">
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="logSearch" placeholder="Buscar actividad...">
+          </div>
+          <button class="btn btn-secondary filter-btn" id="btnFilter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+            Filtrar
+          </button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>SELLO DE TIEMPO</th>
+              <th>ADMINISTRADOR</th>
+              <th>MÓDULO</th>
+              <th>ACCIÓN / EVENTO</th>
+              <th class="text-right">ESTADO</th>
+            </tr>
+          </thead>
+          <tbody id="logsTableBody">
+            <!-- Renderizado dinámico desde main.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="logs-footer">
+        <span class="footer-info">Mostrando registros del sistema de las últimas 24 horas</span>
+        <div class="pagination" id="logsPagination"></div>
+      </div>
+    </section>
+
+    <!-- Banner de Cumplimiento -->
+    <div class="compliance-banner">
+      <div class="compliance-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="compliance-text">
+        <h3>Cumplimiento Legal y Auditoría Permanente</h3>
+        <p>Toda actividad realizada en este módulo queda registrada bajo firma digital única del administrador. Los documentos emitidos cuentan con validación QR de autenticidad institucional. Conforme a las normativas vigentes del Ministerio de Educación.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

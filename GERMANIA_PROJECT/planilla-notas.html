@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GERMANIA - Registro de Notas Detallado</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 pt-16 bg-[#f2f4f6] dark:bg-slate-900 flex flex-col border-r border-slate-200">
+        <div class="px-6 py-6 border-none">
+            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Panel del Docente</p>
+            <p class="text-xs text-primary font-medium opacity-70">Director de Grupo</p>
+        </div>
+        <nav class="flex flex-col gap-1 px-0">
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="panelprofesor.html">
+                <span class="material-symbols-outlined text-[22px]">dashboard</span>
+                <span class="text-sm font-semibold font-headline">Inicio</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="mis-grupos.html">
+                <span class="material-symbols-outlined text-[22px]">group</span>
+                <span class="text-sm font-semibold font-headline">Mis Grupos</span>
+            </a>
+            <a class="relative flex items-center gap-4 py-3 text-primary font-bold bg-white/50 pl-6" href="planilla-notas.html">
+                <div class="active-pill bg-primary"></div>
+                <span class="material-symbols-outlined text-[22px]">description</span>
+                <span class="text-sm font-semibold font-headline">Planilla de Notas</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="asistencia.html">
+                <span class="material-symbols-outlined text-[22px]">calendar_today</span>
+                <span class="text-sm font-semibold font-headline">Asistencia</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="reportesprofe.html">
+                <span class="material-symbols-outlined text-[22px]">analytics</span>
+                <span class="text-sm font-semibold font-headline">Reportes</span>
+            </a>
+        </nav>
+        <div class="mt-auto p-6">
+            <div class="bg-primary-container/10 rounded-xl p-4">
+                <p class="text-[10px] font-bold text-primary mb-1">AÑO LECTIVO</p>
+                <p class="text-lg font-bold text-primary">2026</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- TopNavBar (Shared Component) -->
+    <header class="bg-gradient-to-r from-[#000666] to-[#1a237e] text-white font-['Manrope'] tracking-tight fixed full-width top-0 z-50 shadow-lg shadow-blue-900/20 flex justify-between items-center w-full px-8 py-4 h-16">
+        <div class="text-2xl font-bold text-white tracking-widest pl-0">GERMANIA</div>
+        <nav class="hidden md:flex gap-8">
+            <a class="text-white border-b-2 border-white pb-1" href="panelprofesor.html">Dashboard</a>
+            <a class="text-blue-100/70 hover:text-white transition-colors" href="#">Academic Calendar</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <button class="hover:bg-white/10 p-2 rounded-lg transition-transform scale-95 active:scale-90">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <a href="configuracion.html" class="hover:bg-white/10 p-2 rounded-lg transition-transform scale-95 active:scale-90">
+                <span class="material-symbols-outlined" data-icon="help">help</span>
+            </a>
+            <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border-2 border-white/20">
+                <img alt="Professor Profile Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADh2iMJuA01lY-HrzfHybWYqkjrrDU-fIDgXtwDkNqJHYD1yIH_17zsvhCdMWQ_5NKE9Vn3QWj5VND9ztuJdPtOlWMnEoCeOaXYaEIsho6ESRivDxIFOV3iTVqBhsOaZHf3Ocre1118L6HYRWidngsyT4rJi9qye_vhjyjjmzEVb7PRMs50Lfl1aMCxKyI0gpPsEu6CBH5FQUsqegcZP6i2Vxo_hORD0-L0BOY76pImMTKh556DEooujC3mm2lQ4ugv7__mzi3AX0"/>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 ml-64 mt-16 p-8 min-h-screen bg-surface">
+        <!-- 1. Encabezado Administrativo -->
+        <section class="mb-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 flex-1">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-outline uppercase tracking-tighter">Grado</label>
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-semibold text-on-surface focus:ring-2 focus:ring-primary-container">
+                            <option>Undécimo Grado (11º)</option>
+                            <option>Décimo Grado (10º)</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-outline uppercase tracking-tighter">Grupo</label>
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-semibold text-on-surface focus:ring-2 focus:ring-primary-container">
+                            <option>Grupo A - Ciencias</option>
+                            <option>Grupo B - Humanidades</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-outline uppercase tracking-tighter">Periodo</label>
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-semibold text-on-surface focus:ring-2 focus:ring-primary-container">
+                            <option>Segundo Trimestre</option>
+                            <option>Primer Trimestre</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-outline uppercase tracking-tighter">Asignatura</label>
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-semibold text-on-surface focus:ring-2 focus:ring-primary-container">
+                            <option>Cálculo Integral</option>
+                            <option>Física Cuántica</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <button class="flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-sm hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-lg" data-icon="description">description</span> Exportar Excel
+                    </button>
+                    <button class="flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-sm hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span> Imprimir PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Tabla de Calificaciones -->
+        <section class="mb-10 overflow-hidden rounded-xl bg-surface-container-low">
+            <div class="overflow-x-auto no-scrollbar">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-primary text-white">
+                            <th class="p-5 font-headline text-sm font-bold first:rounded-tl-xl">Estudiante</th>
+                            <th class="p-5 font-headline text-xs font-bold uppercase text-center border-l border-white/10">% Asist.</th>
+                            <!-- Bloque Nota 1 -->
+                            <th class="p-0 border-l border-white/10">
+                                <div class="bg-primary-container p-2 text-center text-[10px] uppercase tracking-widest text-on-primary-container font-bold">Nota 1 (30%)</div>
+                                <div class="grid grid-cols-3 text-[10px] text-center py-2 px-1">
+                                    <span>Act 1</span><span>Act 2</span><span class="font-extrabold text-white">TOTAL</span>
+                                </div>
+                            </th>
+                            <!-- Bloque Nota 2 -->
+                            <th class="p-0 border-l border-white/10">
+                                <div class="bg-primary-container p-2 text-center text-[10px] uppercase tracking-widest text-on-primary-container font-bold">Nota 2 (30%)</div>
+                                <div class="grid grid-cols-3 text-[10px] text-center py-2 px-1">
+                                    <span>Act 1</span><span>Act 2</span><span class="font-extrabold text-white">TOTAL</span>
+                                </div>
+                            </th>
+                            <!-- Bloque Nota 3 -->
+                            <th class="p-0 border-l border-white/10">
+                                <div class="bg-primary-container p-2 text-center text-[10px] uppercase tracking-widest text-on-primary-container font-bold">Nota 3 (20%)</div>
+                                <div class="grid grid-cols-3 text-[10px] text-center py-2 px-1">
+                                    <span>Act 1</span><span>Act 2</span><span class="font-extrabold text-white">TOTAL</span>
+                                </div>
+                            </th>
+                            <th class="p-5 font-headline text-sm font-bold text-center border-l border-white/10">Nota Final</th>
+                            <th class="p-5 font-headline text-sm font-bold text-center border-l border-white/10 last:rounded-tr-xl">Obs.</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-surface-container">
+                        <!-- Student Row 1 -->
+                        <tr class="bg-surface-container-lowest hover:bg-surface-bright transition-colors">
+                            <td class="p-4 flex items-center gap-4">
+                                <img alt="Student 1" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChvxYXnsIg1pC6HGHkOHYR5G6nWrtiWg2CtHMp9FbaRBkbs-ET_6gwIjk3LWRpbhdhpQ6J2YQiRg6AN2Hq6vT_fnguKjGM-PxWUUxWlRipjvSFugTMzYak-HRiWwhAkAULewtvompFpV-Bj4kfAvh3Dfnjwb7iUN6fgdEYBP1wJ9ncBfXRgY2Wv3O3y0wcWSBHsx5f9XtFdXO3RvzG0dtBup9Nt0e7KCbZHlpDkITyWprZKjfpgWW1hnLts5kfQDOaSngNn_lTZ-Q"/>
+                                <div>
+                                    <div class="font-bold text-on-surface text-sm">ALVARADO MONTENEGRO, JUAN</div>
+                                    <div class="text-[10px] text-outline">ID: 2024-0012</div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-center font-bold text-primary">98%</td>
+                            <td class="p-0 border-l border-surface-container">
+                                <div class="grid grid-cols-3 h-full">
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="4.5"/>
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="4.2"/>
+                                    <div class="flex items-center justify-center font-bold text-primary bg-primary-fixed/30 text-sm">4.3</div>
+                                </div>
+                            </td>
+                            <td class="p-0 border-l border-surface-container">
+                                <div class="grid grid-cols-3 h-full">
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="3.8"/>
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="4.0"/>
+                                    <div class="flex items-center justify-center font-bold text-primary bg-primary-fixed/30 text-sm">3.9</div>
+                                </div>
+                            </td>
+                            <td class="p-0 border-l border-surface-container">
+                                <div class="grid grid-cols-3 h-full">
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="4.8"/>
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="5.0"/>
+                                    <div class="flex items-center justify-center font-bold text-primary bg-primary-fixed/30 text-sm">4.9</div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-center font-black text-on-primary-fixed-variant text-lg">4.3</td>
+                            <td class="p-4 text-center">
+                                <button class="text-primary hover:scale-110 transition-transform"><span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span></button>
+                            </td>
+                        </tr>
+                        <!-- Student Row 2 -->
+                        <tr class="bg-surface-container-low/30 hover:bg-surface-bright transition-colors">
+                            <td class="p-4 flex items-center gap-4">
+                                <img alt="Student 2" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF-yUagEBlTOphve5fg0AaP7mHbw6CUL3nMenafLX2WBmV_Fq7vcbG2HCL9BccPJpnVCuIukYU3FLo8Isia1ZnwcfI79P3DgMa9TljYPbwE01mJmnS5JH_BDjf_zjlcJ58P80w7beujdZJ5GTCWWWjmgZaetDSM78jJr3LZsFcmViOxPcmMA8qU4AbMELQ8X9Lx1pH-WbvLUp2fja8NgOGnOoM9PkbjU63xTIqZzb9s73ODapEIoKLUxSSl9tQp0HRVVHLsnO5xrM"/>
+                                <div>
+                                    <div class="font-bold text-on-surface text-sm">BERMUDEZ ESTRADA, LUCIA</div>
+                                    <div class="text-[10px] text-outline">ID: 2024-0015</div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-center font-bold text-primary">72%</td>
+                            <td class="p-0 border-l border-surface-container">
+                                <div class="grid grid-cols-3 h-full">
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4 text-error" type="text" value="2.1"/>
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="3.0"/>
+                                    <div class="flex items-center justify-center font-bold text-error bg-error-container/30 text-sm">2.5</div>
+                                </div>
+                            </td>
+                            <td class="p-0 border-l border-surface-container">
+                                <div class="grid grid-cols-3 h-full">
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4 text-error" type="text" value="2.5"/>
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4 text-error" type="text" value="2.8"/>
+                                    <div class="flex items-center justify-center font-bold text-error bg-error-container/30 text-sm">2.6</div>
+                                </div>
+                            </td>
+                            <td class="p-0 border-l border-surface-container">
+                                <div class="grid grid-cols-3 h-full">
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="3.5"/>
+                                    <input class="w-full text-center text-sm border-none bg-transparent focus:ring-0 py-4" type="text" value="3.2"/>
+                                    <div class="flex items-center justify-center font-bold text-primary bg-primary-fixed/30 text-sm">3.3</div>
+                                </div>
+                            </td>
+                            <td class="p-4 text-center font-black text-error text-lg">2.7</td>
+                            <td class="p-4 text-center">
+                                <button class="text-error hover:scale-110 transition-transform"><span class="material-symbols-outlined" data-icon="notification_important">notification_important</span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Botón de Cierre -->
+        <section class="flex justify-center mt-12 pb-20">
+            <button class="group relative overflow-hidden bg-primary text-white px-12 py-5 rounded-xl font-headline font-extrabold text-lg tracking-widest shadow-2xl hover:scale-105 active:scale-95 transition-all">
+                <span class="relative z-10 flex items-center gap-4">CERRAR Y REGISTRAR CALIFICACIONES <span class="material-symbols-outlined" data-icon="lock">lock</span></span>
+            </button>
+        </section>
+    </main>
+</body>
+</html>

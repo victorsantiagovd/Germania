@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración de metadatos básicos y optimización de renderizado móvil -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Recuperar Contraseña | GERMANIA</title>
 
-  <!-- Fuentes e Iconos -->
+  <!-- Preconexión e importación de tipografías desde Google Fonts (Inter y Manrope) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Catálogo de iconos vectoriales Google Material Symbols Outlined -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
-  <!-- Hojas de Estilos de tu proyecto -->
+  <!-- Hojas de estilos locales (Variables globales, diseño base y adaptatividad) -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- Header Superior para Móviles -->
+  <!-- ==================== ENCABEZADO MÓVIL ==================== -->
+  <!-- Cabecera visible únicamente en pantallas pequeñas para mostrar la identidad de marca -->
   <header class="mobile-header">
     <div class="brand-logo">
       <span class="material-symbols-outlined icon-bold">school</span>
@@ -26,12 +30,17 @@
     </div>
   </header>
 
+  <!-- ==================== CONTENEDOR PRINCIPAL ==================== -->
   <main class="main-container">
-    <!-- Lado Izquierdo: Branding / Panel Ilustrativo -->
+    
+    <!-- ==================== PANEL DE BRANDING (IZQUIERDA) ==================== -->
+    <!-- Sección visual decorativa que refuerza la propuesta de valor institucional -->
     <section class="branding-section">
+      <!-- Malla / Patrón de fondo abstracto -->
       <div class="node-network-pattern"></div>
       
       <div class="branding-content">
+        <!-- Logo e identificador principal del sistema -->
         <div class="brand-header">
           <div class="logo-box">
             <span class="material-symbols-outlined logo-icon">school</span>
@@ -39,10 +48,12 @@
           <span class="brand-title">GERMANIA</span>
         </div>
 
+        <!-- Eslogan principal -->
         <h1 class="hero-heading">
           Gestiona tu futuro académico hoy.
         </h1>
 
+        <!-- Tarjeta con efecto Glassmorphism y descripción de la plataforma -->
         <div class="glass-panel">
           <p>
             Accede a tus cursos, calificaciones y recursos educativos en un solo lugar. Diseñado para potenciar el aprendizaje colaborativo.
@@ -50,6 +61,7 @@
         </div>
       </div>
 
+      <!-- Listado de ventajas o características destacadas -->
       <div class="branding-features">
         <div class="feature-item">
           <span class="material-symbols-outlined">check_circle</span>
@@ -62,16 +74,18 @@
       </div>
     </section>
 
-    <!-- Lado Derecho: Formulario de Recuperación -->
+    <!-- ==================== FORMULARIO DE RECUPERACIÓN (DERECHA) ==================== -->
+    <!-- Sección interactiva donde el usuario solicita el restablecimiento de su acceso -->
     <section class="form-section">
       <div class="form-wrapper">
         
+        <!-- Encabezado del formulario -->
         <div class="form-header">
           <h2>Recuperar Contraseña</h2>
           <p>Introduce tu correo institucional para recibir un enlace de restablecimiento.</p>
         </div>
 
-        <!-- Mensaje de Éxito Oculto por Defecto -->
+        <!-- Banner de confirmación de envío (Oculto dinámicamente mediante la clase .hidden) -->
         <div id="successMessage" class="alert-success hidden">
           <span class="material-symbols-outlined">check_circle</span>
           <div>
@@ -80,8 +94,10 @@
           </div>
         </div>
 
-        <!-- Formulario -->
+        <!-- Formulario con validación desactivada por defecto para controlarla mediante JavaScript -->
         <form id="recoveryForm" novalidate>
+          
+          <!-- Campo de entrada del correo electrónico -->
           <div class="input-group-container">
             <div class="floating-label-group">
               <span class="material-symbols-outlined input-icon">mail</span>
@@ -93,15 +109,18 @@
               />
               <label for="email">Correo Electrónico</label>
             </div>
+            <!-- Mensaje de error en la validación del formato del correo -->
             <p id="emailError" class="error-text hidden">Por favor, introduce un correo electrónico válido.</p>
           </div>
 
+          <!-- Acciones del formulario: Botón principal y enlace de regreso -->
           <div class="form-actions">
             <button id="submitBtn" class="btn-primary" type="submit">
               <span id="btnText">Enviar Instrucciones</span>
               <span id="btnIcon" class="material-symbols-outlined">arrow_forward</span>
             </button>
 
+            <!-- Opción para regresar a la pantalla de inicio de sesión -->
             <div class="text-center">
               <a class="back-link" href="login.html">
                 <span class="material-symbols-outlined">arrow_back</span>
@@ -111,7 +130,7 @@
           </div>
         </form>
 
-        <!-- Footer Links -->
+        <!-- Pie de página con enlaces a legales y soporte -->
         <footer class="footer-links">
           <a href="#">TÉRMINOS</a>
           <a href="#">PRIVACIDAD</a>
@@ -122,7 +141,7 @@
     </section>
   </main>
 
-  <!-- Script de autenticación de tu proyecto -->
+  <!-- Lógica de autenticación y validación mediante JavaScript -->
   <script src="js/auth.js"></script>
 </body>
 </html>

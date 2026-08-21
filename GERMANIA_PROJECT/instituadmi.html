@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de Institución · EduLedger</title>
+
+<!-- Precarga e importación de fuentes tipográficas desde Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Hojas de estilo CSS (Variables, globales y diseño responsivo) -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==================== BARRA SUPERIOR (TOPBAR) ==================== -->
+<header class="topbar">
+  <div class="topbar-left">
+    <!-- Botón de menú hamburguesa para dispositivos móviles -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <span class="brand">Germania</span>
+  </div>
+  
+  <div class="topbar-right">
+    <!-- Botón de notificaciones con indicador de estado (punto) -->
+    <button class="icon-btn" aria-label="Notificaciones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      <span class="dot"></span>
+    </button>
+    
+    <!-- Botón de configuración del sistema -->
+    <button class="icon-btn" aria-label="Configuración">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    </button>
+    
+    <!-- Avatar con iniciales del usuario (Administrador) -->
+    <div class="avatar">AD</div>
+  </div>
+</header>
+
+<!-- Contenedor principal de la aplicación (Layout de Shell) -->
+<div class="app-shell">
+  <!-- Fondo semitransparente para cerrar el menú en móviles -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ==================== NAVEGACIÓN LATERAL (SIDEBAR) ==================== -->
+  <aside class="sidebar" id="sidebar">
+    <!-- Identificador de rol del usuario -->
+    <div class="sidebar-role">
+      <div class="role-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><polygon points="12 3 21 9 3 9"></polygon></svg>
+      </div>
+      <span class="role-label">Administrador</span>
+    </div>
+    
+    <!-- Enlaces de navegación del menú principal -->
+    <nav class="nav-group">
+      <a class="nav-link" href="paneladmin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Inicio
+      </a>
+      <!-- Enlace con la clase .active indicando la vista en uso -->
+      <a class="nav-link active" href="instituadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><polygon points="12 3 21 9 3 9"></polygon></svg>
+        Institución
+      </a>
+      <a class="nav-link" href="matriculadmin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="8.5" cy="11" r="2.2"></circle><line x1="5.5" y1="17" x2="11.5" y2="17"></line><line x1="15" y1="9" x2="19" y2="9"></line><line x1="15" y1="13" x2="19" y2="13"></line></svg>
+        Matrículas
+      </a>
+      <a class="nav-link" href="docenteadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
+        Docentes
+      </a>
+      <a class="nav-link" href="reporte.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        Reportes
+      </a>
+    </nav>
+    
+    <!-- Pie del sidebar con información de versión del software -->
+    <div class="sidebar-footer">EduLedger v2.4 · Germania</div>
+  </aside>
+
+  <!-- ==================== ÁREA DE CONTENIDO PRINCIPAL ==================== -->
+  <main class="main-content">
+    <!-- Migas de pan (Breadcrumb) para contextualizar la navegación -->
+    <div class="breadcrumb">Principal <span style="color:var(--text-faint);">›</span> <span class="current">Gestión de Institución</span></div>
+    
+    <!-- Encabezado de la página -->
+    <div class="page-header">
+      <div>
+        <h1>Gestión de Institución</h1>
+        <p class="subtitle">Control centralizado de sedes, infraestructura física y capacidad operativa.</p>
+      </div>
+    </div>
+
+    <!-- ==================== TARJETAS HERO (SEDES EDUCATIVAS) ==================== -->
+    <section class="site-grid">
+      <!-- Tarjeta 1: Sede Urbana Principal -->
+      <div class="card site-hero">
+        <div class="site-hero-img" style="background-image:url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop');"></div>
+        <div class="site-hero-content">
+          <span class="site-badge">ACTIVA</span>
+          <h2>Sede Urbana Principal</h2>
+        </div>
+        <!-- Métricas clave de la sede urbana -->
+        <div class="site-stats-bar">
+          <div>
+            <div class="site-stat-label">Capacidad Total</div>
+            <div class="site-stat-value">1,200 <span class="unit">est.</span></div>
+          </div>
+          <div>
+            <div class="site-stat-label">Salones</div>
+            <div class="site-stat-value">42</div>
+          </div>
+          <div>
+            <div class="site-stat-label">Estado Infra.</div>
+            <div class="site-stat-value" style="font-size:.92rem;color:var(--success);"><span class="dot-status"></span>Excelente</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: Sede Rural -->
+      <div class="card site-hero rural">
+        <div class="site-hero-img" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop');"></div>
+        <div class="site-hero-content">
+          <span class="site-badge on">OPERATIVA</span>
+          <h2>Sede Rural Los Pinos</h2>
+        </div>
+        <!-- Panel de ocupación y ubicación física de la sede -->
+        <div class="occupancy-panel" style="background:var(--surface);">
+          <div class="occupancy-head"><span>Ocupación Actual</span><span>85%</span></div>
+          <div class="progress"><span style="width:85%;background:var(--success);"></span></div>
+          <div class="location-row">
+            <div class="meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Vereda El Carmen, Km 4
+            </div>
+            <div class="meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              250 Estudiantes
+            </div>
+          </div>
+        </div>
+        <a href="#" class="hero-cta">VER DETALLES SEDE RURAL</a>
+      </div>
+    </section>
+
+    <!-- ==================== TABLA: INVENTARIO DE SALONES ==================== -->
+    <section class="card">
+      <div class="card-header" style="flex-wrap:wrap;gap:16px;">
+        <div class="section-title" style="flex-direction:column;align-items:flex-start;gap:2px;">
+          <span style="font-size:1.05rem;">Inventario de Salones y Espacios</span>
+          <span style="font-size:.82rem;color:var(--text-muted);font-weight:500;">Detalle técnico de infraestructura por bloque y nivel.</span>
+        </div>
+        
+        <!-- Barra de herramientas: campo de búsqueda y botón de filtrado -->
+        <div class="toolbar" style="margin:0;flex-wrap:nowrap;">
+          <div class="search-field" style="min-width:220px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="salonSearch" placeholder="Buscar salón...">
+          </div>
+          <button class="icon-square-btn" type="button" aria-label="Filtrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla responsiva de salones con atributos data-search para filtros JS -->
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Código / Nombre</th><th>Sede / Bloque</th><th>Capacidad</th><th>Equipamiento</th><th>Estado</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="salonesTableBody">
+            <!-- Salón A-101 -->
+            <tr data-search="a-101 laboratorio de ciencias urbana bloque norte">
+              <td><div class="person-cell"><div class="mini-avatar">🏫</div><div><div style="font-weight:700;">A-101</div><div style="color:var(--text-faint);font-size:.78rem;">Laboratorio de Ciencias</div></div></div></td>
+              <td>Urbana<br><span style="color:var(--text-faint);font-size:.78rem;">Bloque Norte · Piso 1</span></td>
+              <td>35</td>
+              <td>💻 📹 ❄️</td>
+              <td><span class="status-pill status-disponible">DISPONIBLE</span></td>
+              <td><div class="row-actions">
+                <button class="row-icon-btn" type="button" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                <button class="row-icon-btn" type="button" title="Más opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+              </div></td>
+            </tr>
+            <!-- Salón B-204 -->
+            <tr data-search="b-204 aula general urbana bloque sur">
+              <td><div class="person-cell"><div class="mini-avatar">🏫</div><div><div style="font-weight:700;">B-204</div><div style="color:var(--text-faint);font-size:.78rem;">Aula General</div></div></div></td>
+              <td>Urbana<br><span style="color:var(--text-faint);font-size:.78rem;">Bloque Sur · Piso 2</span></td>
+              <td>40</td>
+              <td>📹 📶</td>
+              <td><span class="status-pill status-ocupado">OCUPADO</span></td>
+              <td><div class="row-actions">
+                <button class="row-icon-btn" type="button" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                <button class="row-icon-btn" type="button" title="Más opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+              </div></td>
+            </tr>
+            <!-- Salón R-02 -->
+            <tr data-search="r-02 aula multiple rural bloque unico">
+              <td><div class="person-cell"><div class="mini-avatar">🏫</div><div><div style="font-weight:700;">R-02</div><div style="color:var(--text-faint);font-size:.78rem;">Aula Múltiple</div></div></div></td>
+              <td>Rural<br><span style="color:var(--text-faint);font-size:.78rem;">Bloque Único · Piso 1</span></td>
+              <td>28</td>
+              <td>📶</td>
+              <td><span class="status-pill status-mantenimiento">MANTENIMIENTO</span></td>
+              <td><div class="row-actions">
+                <button class="row-icon-btn" type="button" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                <button class="row-icon-btn" type="button" title="Más opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+              </div></td>
+            </tr>
+            <!-- Salón C-301 -->
+            <tr data-search="c-301 sala de sistemas urbana bloque norte">
+              <td><div class="person-cell"><div class="mini-avatar">🏫</div><div><div style="font-weight:700;">C-301</div><div style="color:var(--text-faint);font-size:.78rem;">Sala de Sistemas</div></div></div></td>
+              <td>Urbana<br><span style="color:var(--text-faint);font-size:.78rem;">Bloque Norte · Piso 3</span></td>
+              <td>30</td>
+              <td>💻 ❄️ 📶</td>
+              <td><span class="status-pill status-disponible">DISPONIBLE</span></td>
+              <td><div class="row-actions">
+                <button class="row-icon-btn" type="button" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                <button class="row-icon-btn" type="button" title="Más opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+              </div></td>
+            </tr>
+            <!-- Salón R-05 -->
+            <tr data-search="r-05 biblioteca rural bloque unico">
+              <td><div class="person-cell"><div class="mini-avatar">🏫</div><div><div style="font-weight:700;">R-05</div><div style="color:var(--text-faint);font-size:.78rem;">Biblioteca</div></div></div></td>
+              <td>Rural<br><span style="color:var(--text-faint);font-size:.78rem;">Bloque Único · Piso 1</span></td>
+              <td>20</td>
+              <td>📶</td>
+              <td><span class="status-pill status-disponible">DISPONIBLE</span></td>
+              <td><div class="row-actions">
+                <button class="row-icon-btn" type="button" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                <button class="row-icon-btn" type="button" title="Más opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+              </div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Estado vacío (se activa por JS cuando no hay coincidencias de búsqueda) -->
+      <div id="salonesEmpty" class="empty-state" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <p>No se encontraron salones que coincidan con la búsqueda.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Scripts globales JavaScript -->
+<script src="js/main.js"></script>
+</body>
+</html>

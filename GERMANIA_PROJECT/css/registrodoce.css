@@ -1,0 +1,375 @@
+/* ============================================================
+   registro-docente.css
+   Estilos específicos de la página "Registro de Personal Docente"
+   Depende de css/variables.css para tokens de color si existen;
+   incluye valores de respaldo (fallback) por si aún no los tienes.
+   ============================================================ */
+
+/* Variables locales y tokens de diseño con valores por defecto */
+:root {
+  --docente-bg: var(--color-bg, #f4f6fb);
+  --docente-navy: var(--color-primary, #22297a);
+  --docente-navy-dark: var(--color-primary-dark, #171c5c);
+  --docente-text: var(--color-text, #1b1f3b);
+  --docente-text-muted: var(--color-text-muted, #6b7080);
+  --docente-border: var(--color-border, #e4e7f2);
+  --docente-input-bg: var(--color-surface-alt, #f1f3fa);
+  --docente-card-bg: var(--color-surface, #ffffff);
+  --docente-green: #1f9d55;
+  --docente-green-bg: #e5f7ec;
+  --docente-radius: 14px;
+  --docente-radius-sm: 8px;
+}
+
+/* Configuración base del cuerpo de la página */
+body {
+  background: var(--docente-bg);
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--docente-text);
+}
+
+/* Contenedor principal alineado al centro */
+.page-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+/* NAVEGACIÓN SECUNDARIA (Breadcrumb) */
+.breadcrumb {
+  font-size: 13px;
+  color: var(--docente-text-muted);
+  margin-bottom: 18px;
+}
+.breadcrumb a {
+  color: var(--docente-navy);
+  text-decoration: none;
+  font-weight: 500;
+}
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb-sep { margin: 0 6px; }
+.breadcrumb-current { color: var(--docente-text-muted); }
+
+/* ENCABEZADO DE LA PÁGINA */
+.page-header { margin-bottom: 28px; }
+.page-header h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--docente-navy);
+  margin: 0 0 6px;
+}
+.page-subtitle {
+  color: var(--docente-text-muted);
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ESTRUCTURA GENERAL DE LAYOUT (Área principal + Barra lateral) */
+.docente-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+.docente-main { display: flex; flex-direction: column; gap: 20px; }
+.docente-side { display: flex; flex-direction: column; gap: 20px; }
+
+/* TARJETAS DE CONTENIDO (Cards) */
+.card {
+  background: var(--docente-card-bg);
+  border: 1px solid var(--docente-border);
+  border-radius: var(--docente-radius);
+  padding: 26px 28px;
+  box-shadow: 0 1px 2px rgba(20, 24, 60, 0.03);
+}
+fieldset.card { border: 1px solid var(--docente-border); }
+fieldset.card legend { padding: 0; }
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--docente-navy);
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--docente-border);
+  width: 100%;
+}
+.card-title .icon { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* CUADRÍCULAS DE CAMPOS Y FORMULARIOS */
+.field-grid {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.field-grid.two-col { grid-template-columns: 1fr 1fr; }
+.field-grid.three-col { grid-template-columns: 1.3fr 1fr 1fr; }
+.field-grid:last-child,
+.card > .field:last-child { margin-bottom: 0; }
+
+/* ESTILOS DE CAMPOS DE ENTRADA (Inputs & Selects) */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field:last-child { margin-bottom: 0; }
+.field-grid .field { margin-bottom: 0; }
+
+.field label,
+.field-label-static {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--docente-text-muted);
+}
+
+.field input[type="text"],
+.field input[type="date"],
+.field input[type="number"],
+.field select {
+  background: var(--docente-input-bg);
+  border: 1px solid var(--docente-border);
+  border-radius: var(--docente-radius-sm);
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--docente-text);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input::placeholder { color: #9298ab; }
+.field input:focus,
+.field select:focus {
+  border-color: var(--docente-navy);
+  box-shadow: 0 0 0 3px rgba(34, 41, 122, 0.12);
+}
+.field select { appearance: none; cursor: pointer; }
+
+/* MENSAJES Y ESTADOS DE ERROR */
+.field-error {
+  font-size: 12px;
+  color: #d64545;
+  min-height: 14px;
+}
+.field.has-error input,
+.field.has-error select {
+  border-color: #d64545;
+  box-shadow: 0 0 0 3px rgba(214, 69, 69, 0.1);
+}
+
+/* GRUPOS DE OPCIONES RADIALES (Radio Buttons) */
+.radio-group { display: flex; flex-direction: column; gap: 10px; margin-top: 2px; }
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--docente-text);
+  cursor: pointer;
+}
+.radio-option input[type="radio"] { accent-color: var(--docente-navy); width: 16px; height: 16px; }
+
+/* BOTONES Y ACCIONES DEL FORMULARIO */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 4px;
+}
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--docente-radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--docente-text-muted);
+}
+.btn-ghost:hover { color: var(--docente-text); }
+.btn-primary {
+  background: var(--docente-navy);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--docente-navy-dark); }
+.btn-primary:disabled { opacity: .6; cursor: not-allowed; }
+
+/* TARJETAS LATERALES (Sidebar) Y CHECKLIST */
+.side-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.side-card-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--docente-navy);
+  margin: 0;
+}
+.side-card-header .icon { width: 18px; height: 18px; }
+
+.badge-required {
+  background: var(--docente-green-bg);
+  color: var(--docente-green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .03em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.checklist { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.checklist-item { display: flex; align-items: flex-start; gap: 10px; }
+.checklist-item input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--docente-navy);
+  flex-shrink: 0;
+}
+.checklist-item label { display: flex; flex-direction: column; gap: 2px; cursor: pointer; }
+.checklist-item strong { font-size: 13.5px; color: var(--docente-text); }
+.checklist-item span { font-size: 12.5px; color: var(--docente-text-muted); }
+
+/* ÁREA DE CARGA DE ARCHIVOS (Dropzone) */
+.upload-hint {
+  font-size: 12.5px;
+  color: var(--docente-text-muted);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.upload-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1.5px dashed var(--docente-border);
+  border-radius: var(--docente-radius-sm);
+  padding: 16px;
+  color: var(--docente-navy);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.upload-dropzone:hover { background: var(--docente-input-bg); border-color: var(--docente-navy); }
+.upload-dropzone .icon { width: 18px; height: 18px; }
+
+/* TARJETA INFORMATIVA DE SEGURIDAD */
+.side-card-security {
+  background: var(--docente-navy);
+  border-color: var(--docente-navy);
+  color: #fff;
+}
+.side-card-security h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+.side-card-security p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+/* NOTIFICACIONES FLOTANTES (Toast JS) */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--docente-navy);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: var(--docente-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(23, 28, 92, 0.25);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .2s, transform .2s;
+  z-index: 50;
+}
+.toast.toast-visible { opacity: 1; transform: translateY(0); }
+.toast.toast-error { background: #d64545; }
+
+/* MODAL DE CONFIRMACIÓN Y DIÁLOGOS */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 21, 48, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+.modal-overlay.modal-visible { opacity: 1; }
+.modal-overlay[hidden] { display: none; }
+
+.modal-box {
+  background: var(--docente-card-bg);
+  border-radius: var(--docente-radius);
+  padding: 36px 32px 28px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(15, 18, 50, 0.25);
+  transform: translateY(10px) scale(.98);
+  transition: transform .18s ease;
+}
+.modal-overlay.modal-visible .modal-box { transform: translateY(0) scale(1); }
+
+.modal-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--docente-green-bg);
+  color: var(--docente-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-icon svg { width: 28px; height: 28px; }
+
+.modal-box h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--docente-text);
+  margin: 0 0 8px;
+}
+.modal-box p {
+  font-size: 14px;
+  color: var(--docente-text-muted);
+  line-height: 1.55;
+  margin: 0 0 24px;
+}
+.modal-box p strong { color: var(--docente-text); }
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.modal-actions .btn { flex: 1; }
+

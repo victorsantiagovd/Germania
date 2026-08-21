@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GERMANIA - Registro de Asistencia</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 pt-16 bg-[#f2f4f6] dark:bg-slate-900 flex flex-col border-r border-slate-200">
+        <div class="px-6 py-6 border-none">
+            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Panel del Docente</p>
+            <p class="text-xs text-primary font-medium opacity-70">Director de Grupo</p>
+        </div>
+        <nav class="flex flex-col gap-1 px-0">
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="panelprofesor.html">
+                <span class="material-symbols-outlined text-[22px]">dashboard</span>
+                <span class="text-sm font-semibold font-headline">Inicio</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="mis-grupos.html">
+                <span class="material-symbols-outlined text-[22px]">group</span>
+                <span class="text-sm font-semibold font-headline">Mis Grupos</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="planilla-notas.html">
+                <span class="material-symbols-outlined text-[22px]">description</span>
+                <span class="text-sm font-semibold font-headline">Planilla de Notas</span>
+            </a>
+            <a class="relative flex items-center gap-4 py-3 text-primary font-bold bg-white/50 pl-6" href="asistencia.html">
+                <div class="active-pill bg-primary"></div>
+                <span class="material-symbols-outlined text-[22px]">calendar_today</span>
+                <span class="text-sm font-semibold font-headline">Asistencia</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="reportesprofe.html">
+                <span class="material-symbols-outlined text-[22px]">analytics</span>
+                <span class="text-sm font-semibold font-headline">Reportes</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- TopNavBar -->
+    <header class="bg-gradient-to-r from-[#000666] to-[#1a237e] text-white fixed full-width top-0 z-50 shadow-lg shadow-blue-900/20 flex justify-between items-center w-full px-8 py-4 h-16">
+        <div class="text-2xl font-bold tracking-tight text-white uppercase pl-0">GERMANIA</div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 hover:bg-white/10 transition-colors rounded-full scale-95 duration-200">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <a href="configuracion.html" class="p-2 hover:bg-white/10 transition-colors rounded-full scale-95 duration-200">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+            </a>
+            <div class="flex items-center gap-3 pl-4 border-l border-white/20">
+                <div class="text-right hidden sm:block">
+                    <p class="text-xs font-bold leading-none">Elena Rivas</p>
+                    <p class="text-[10px] text-blue-200 opacity-80">Profesor Titular</p>
+                </div>
+                <img alt="Elena Rivas" class="w-8 h-8 rounded-full border-2 border-white/30 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAMj41l5ek8FjrcDWNJDd_3rDY3U0O1YXbto5MC-LZLVupE2-fSgdCcfUrtKs-9EHZfXtoKXrGKaAGfsiYCZKNbZU7LsFoiMD9HYuKkNmen3_y-kXwKAT-0f0sCq2hyLfdMh0dmY7c3_Bqto3v89C-KSqvoQHJFby7hDz-Z7sN7afHrSYmt7lVm_gDdiUTHS5oEI3IyXJCqSci6ntB5HEML2iuRRjjIOcZXjGb90_k3o35U517Mz0GemIKCK9-upc1afCqqswLNM"/>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 ml-64 mt-16 p-8 bg-surface">
+        <!-- Breadcrumbs & Header -->
+        <div class="mb-10">
+            <div class="flex items-center gap-2 text-xs text-outline mb-4">
+                <span>Académico</span>
+                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                <span class="text-primary font-semibold">Registro de Asistencia</span>
+            </div>
+            <h1 class="text-4xl font-extrabold text-primary tracking-tight">Registro de Asistencia</h1>
+            <p class="text-secondary mt-2 body-md">Gestiona la puntualidad y presencia diaria de tus estudiantes.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <section class="bg-surface-container-lowest rounded-xl p-6 mb-8 flex flex-wrap items-end gap-6 border border-slate-100 shadow-sm">
+            <div class="flex flex-col gap-2 min-w-[180px]">
+                <label class="text-[11px] font-bold text-outline uppercase tracking-wider px-1">Sede</label>
+                <div class="relative">
+                    <select class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 text-sm text-on-surface focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+                        <option>Todas las sedes</option>
+                        <option>Sede Principal</option>
+                        <option>Villa Rosario</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-outline">expand_more</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 min-w-[220px]">
+                <label class="text-[11px] font-bold text-outline uppercase tracking-wider px-1">Grupo</label>
+                <div class="relative">
+                    <select class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 text-sm text-on-surface focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+                        <option disabled="" selected="">Seleccionar Grupo...</option>
+                        <option>Matemáticas 9-A</option>
+                        <option>Física 10-B</option>
+                        <option>Geometría 7-A</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-outline">expand_more</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 min-w-[160px]">
+                <label class="text-[11px] font-bold text-outline uppercase tracking-wider px-1">Jornada</label>
+                <div class="relative">
+                    <select class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 text-sm text-on-surface focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+                        <option>Mañana</option>
+                        <option>Tarde</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-outline">expand_more</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 min-w-[180px]">
+                <label class="text-[11px] font-bold text-outline uppercase tracking-wider px-1">Fecha</label>
+                <div class="relative">
+                    <input class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 text-sm text-on-surface focus:ring-2 focus:ring-primary cursor-pointer" type="date" value="2023-10-27"/>
+                </div>
+            </div>
+            <a href="asistencia-detallada.html" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-all flex items-center gap-2 mb-[1px]">
+                <span class="material-symbols-outlined text-sm">search</span> Consultar
+            </a>
+        </section>
+
+        <!-- Empty State / Data Canvas -->
+        <div class="bg-surface-container-low rounded-xl min-h-[450px] flex flex-col items-center justify-center text-center p-12 border border-outline-variant/15 border-dashed">
+            <div class="w-24 h-24 bg-secondary-container rounded-full flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'opsz' 48;">person_search</span>
+            </div>
+            <h2 class="text-2xl font-bold text-primary mb-3">Listo para iniciar el control</h2>
+            <p class="text-secondary max-w-sm mx-auto leading-relaxed">Por favor, selecciona un grupo para iniciar el pase de lista. Podrás registrar asistencia, retardos y excusas médicas en tiempo real.</p>
+            
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                <!-- Helper Cards -->
+                <div class="bg-surface-container-lowest p-5 rounded-xl text-left border-none shadow-sm">
+                    <div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary text-sm">bolt</span>
+                    </div>
+                    <h4 class="text-xs font-bold uppercase text-outline mb-1">Pase rápido</h4>
+                    <p class="text-[13px] text-on-surface-variant">Marca a todos como presentes con un solo clic.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-5 rounded-xl text-left border-none shadow-sm">
+                    <div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary text-sm">mail</span>
+                    </div>
+                    <h4 class="text-xs font-bold uppercase text-outline mb-1">Notificaciones</h4>
+                    <p class="text-[13px] text-on-surface-variant">Envío automático de alertas a padres de familia.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-5 rounded-xl text-left border-none shadow-sm">
+                    <div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary text-sm">bar_chart</span>
+                    </div>
+                    <h4 class="text-xs font-bold uppercase text-outline mb-1">Estadísticas</h4>
+                    <p class="text-[13px] text-on-surface-variant">Visualiza el porcentaje de asistencia por periodo.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

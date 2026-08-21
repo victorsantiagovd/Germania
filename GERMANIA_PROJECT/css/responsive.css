@@ -1,49 +1,62 @@
-/* Tablet y móvil: se oculta el panel de marca y el formulario ocupa todo el ancho */
+/* ============================================================
+   ESTILOS RESPONSIVOS GLOBALES Y REGLAS MEDIA QUERIES
+   Consolidación de vistas para autenticación, interfaz de estudiante,
+   panel de administración y registro de personal docente.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. SECCIÓN DE AUTENTICACIÓN / PÁGINAS DE LOGIN & REGISTRO
+   ------------------------------------------------------------ */
+
+/* Dispositivos Tabletas y Móviles (hasta 1023px) */
 @media (max-width: 1023px) {
-    .brand-panel {
-        display: none;
-    }
+  /* Oculta el panel lateral de branding/marca */
+  .brand-panel {
+    display: none;
+  }
 
-    .form-panel {
-        width: 100%;
-        padding: var(--space-lg) 1.5rem;
-    }
+  /* El panel del formulario toma el ancho completo de la pantalla */
+  .form-panel {
+    width: 100%;
+    padding: var(--space-lg) 1.5rem;
+  }
 
-    .mobile-header {
-        display: flex;
-        margin-bottom: var(--space-lg);
-    }
+  /* Muestra el encabezado superior para móviles */
+  .mobile-header {
+    display: flex;
+    margin-bottom: var(--space-lg);
+  }
 }
 
-/* Móvil pequeño: reducir paddings y tamaños de texto */
+/* Teléfonos Móviles Pequeños (hasta 480px) */
 @media (max-width: 480px) {
-    .form-panel {
-        padding: var(--space-md) 1rem;
-    }
+  .form-panel {
+    padding: var(--space-md) 1rem;
+  }
 
-    .welcome-title {
-        font-size: 1.5rem;
-    }
+  .welcome-title {
+    font-size: 1.5rem;
+  }
 
-    .social-login {
-        grid-template-columns: 1fr;
-    }
+  .social-login {
+    grid-template-columns: 1fr;
+  }
 
-    .legal-links {
-        gap: var(--space-md);
-        flex-wrap: wrap;
-    }
+  .legal-links {
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
 }
 
-/* --- Maquetación Responsiva (Layout & Media Queries) --- */
+/* --- Layout Base Mobile First (Estructura de Autenticación) --- */
 
-/* Mobile First (Móviles / Pantallas pequeñas) */
 .main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Encabezado fijo superior para móviles */
 .mobile-header {
   display: flex;
   position: fixed;
@@ -78,9 +91,10 @@
 }
 
 .branding-section {
-  display: none; /* Oculto en móviles */
+  display: none; /* Oculto por defecto en móviles */
 }
 
+/* Sección principal del formulario de autenticación */
 .form-section {
   width: 100%;
   background-color: #ffffff;
@@ -190,7 +204,7 @@
   color: var(--primary-color);
 }
 
-/* Escritorio / Pantallas Grandes (>= 1024px) */
+/* Pantallas Grandes / Escritorio (desde 1024px) */
 @media (min-width: 1024px) {
   .main-container {
     flex-direction: row;
@@ -303,25 +317,35 @@
   }
 }
 
+
+/* ------------------------------------------------------------
+   2. INTERFAZ DE ESTUDIANTE Y DASHBOARDS
+   ------------------------------------------------------------ */
+
+/* Pantallas Medianas (hasta 1180px) */
 @media (max-width: 1180px) {
   .app {
     grid-template-columns: var(--sidebar-w) 1fr;
   }
+
   .rightbar {
     grid-column: 1 / -1;
     flex-direction: row;
     padding: 0 28px 24px;
   }
+
   .rightbar .panel,
   .rightbar .promo {
     flex: 1;
   }
 }
-/* responsive completo estudiante */
+
+/* Tabletas y Pantallas Medianas (hasta 860px) */
 @media (max-width: 860px) {
   .app {
     grid-template-columns: 1fr;
   }
+
   .sidebar {
     position: fixed;
     inset: 0 auto 0 0;
@@ -331,37 +355,203 @@
     z-index: 40;
     box-shadow: var(--shadow-md);
   }
+
   .sidebar.is-open {
     transform: translateX(0);
   }
+
   .course-grid {
     grid-template-columns: 1fr;
   }
+
   .rightbar {
     flex-direction: column;
     padding: 0 20px 20px;
   }
+
   .main {
     padding: 16px 20px;
   }
+
+  /* Ajustes para el registro de docentes en pantallas comprimidas */
+  .docente-layout { 
+    grid-template-columns: 1fr; 
+  }
+
+  .field-grid.two-col,
+  .field-grid.three-col { 
+    grid-template-columns: 1fr; 
+  }
 }
 
+/* Dispositivos Móviles (hasta 560px) */
 @media (max-width: 560px) {
   .topbar {
     justify-content: space-between;
   }
+
   .search-box {
     width: auto;
     flex: 1;
   }
+
   .user-chip__name,
   .user-chip__role {
     display: none;
   }
+
   .toolbar {
     flex-wrap: wrap;
   }
+
   .filter-input {
     flex-basis: 100%;
   }
 }
+
+
+/* ------------------------------------------------------------
+   3. PANEL DE ADMINISTRACIÓN
+   ------------------------------------------------------------ */
+
+/* Adaptación de grids en administración (hasta 1180px) */
+@media (max-width: 1180px) {
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .site-grid { grid-template-columns: 1fr; }
+  .form-layout { grid-template-columns: 1fr; }
+  .form-side { order: -1; }
+  .mini-stat-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Navegación y menús desplegables de administración (hasta 900px) */
+@media (max-width: 900px) {
+  .menu-toggle { display: flex; }
+  
+  .sidebar { 
+    transform: translateX(-100%); 
+    box-shadow: var(--shadow-lg); 
+  }
+  
+  .sidebar.open { transform: translateX(0); }
+  
+  .sidebar-overlay.open { 
+    display: block; 
+    opacity: 1; 
+  }
+  
+  .main-content { 
+    margin-left: 0; 
+    width: 100%; 
+    padding: 24px 18px 56px; 
+  }
+
+  .stat-grid { grid-template-columns: 1fr; }
+  .choice-grid { grid-template-columns: 1fr; }
+  .field-row, .field-row-3 { grid-template-columns: 1fr; }
+  .site-stats-bar { grid-template-columns: 1fr; }
+  
+  .site-stats-bar > div + div { 
+    border-left: none; 
+    border-top: 1px solid var(--border); 
+  }
+
+  .mini-stat-grid { grid-template-columns: 1fr; }
+  
+  .page-header { 
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+
+  .brand { font-size: 1.05rem; }
+}
+
+/* Ajustes de tipografía y tablas para móvil (hasta 560px) */
+@media (max-width: 560px) {
+  .page-header h1 { font-size: 1.5rem; }
+  .step-label { display: none; }
+  
+  .toolbar { 
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+
+  .results-chip { text-align: center; }
+  .card-pad { padding: 18px; }
+  .data-table th, .data-table td { padding: 12px 14px; }
+}
+
+
+/* ------------------------------------------------------------
+   4. ACCESIBILIDAD Y PREFERENCIAS DEL SISTEMA
+   ------------------------------------------------------------ */
+
+/* Respeta la preferencia del usuario para reducir el movimiento animado */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .reports-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    transition: left var(--transition-fast);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  .reports-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .logs-toolbar {
+    width: 100%;
+  }
+
+  .search-field input {
+    width: 100%;
+  }
+
+  .logs-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+

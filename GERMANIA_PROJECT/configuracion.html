@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Configuración de Usuario - GERMANIA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen">
+    <!-- TopNavBar -->
+    <header class="bg-primary text-white fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 h-16 shadow-md">
+        <div class="flex items-center gap-12">
+            <div class="text-2xl font-bold tracking-tight font-headline">GERMANIA</div>
+            <nav class="hidden lg:flex gap-8">
+                <a class="text-slate-300 hover:text-white transition-colors text-sm font-medium" href="panelprofesor.html">Dashboard</a>
+                <a class="text-slate-300 hover:text-white transition-colors text-sm font-medium" href="#">Students</a>
+                <a class="text-slate-300 hover:text-white transition-colors text-sm font-medium" href="reportesprofe.html">Reports</a>
+                <a class="text-slate-300 hover:text-white transition-colors text-sm font-medium" href="#">Resources</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-white/10 rounded-full transition-all">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <a href="configuracion.html" class="p-2 hover:bg-white/10 rounded-full transition-all">
+                    <span class="material-symbols-outlined">help</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3 border-l border-white/20 pl-6">
+                <span class="text-sm font-medium hidden sm:block">Elena Rivas</span>
+                <img alt="Elena Rivas" class="w-8 h-8 rounded-full object-cover border border-white/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPepnQBQnSTlrxXdNsysgIi3E6SOrgviMIcjAopky3JUjYb4-QRG-y1mKoAieiR0HKvupd32w43tQtvMdWcrpdDco73x6nYIa6Lxff1wTEaVfnr14G79YExpolPsdwGuBXAvrJcVOKs9CEwqD0pfb3CPmPjZqp5d0v6htWmxh8viwohOAvxDEzwDjCpi75OZ1HelR31F_ERWNCGVrIKVYY-q_VwdPnmEBK7CeajS6Kizcz5QTMVHJpt_uWc_YxQcjp12vDDKTHwmA"/>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-16">
+        <!-- SideNavBar (Collapsed per requirement) -->
+        <aside class="fixed left-0 top-0 pt-20 flex flex-col items-center h-full z-40 bg-white w-16 border-r border-slate-200">
+            <div class="flex flex-col gap-8 px-2 flex-grow items-center">
+                <a href="panelprofesor.html" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-all">
+                    <span class="material-symbols-outlined">home</span>
+                </a>
+                <button class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-all">
+                    <span class="material-symbols-outlined">school</span>
+                </button>
+                <button class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-all">
+                    <span class="material-symbols-outlined">leaderboard</span>
+                </button>
+                <button class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-all">
+                    <span class="material-symbols-outlined">mail</span>
+                </button>
+            </div>
+            <!-- Active Tab: Settings at the bottom -->
+            <div class="flex flex-col gap-8 mb-6 items-center">
+                <a href="configuracion.html" class="p-2 rounded-lg text-primary bg-primary/10 border-r-4 border-primary rounded-r-none relative -right-1">
+                    <span class="material-symbols-outlined active-pill fill-1">settings</span>
+                </a>
+                <button class="p-2 rounded-lg text-slate-400 hover:text-error transition-all">
+                    <span class="material-symbols-outlined">logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Canvas -->
+        <main class="ml-16 w-full min-h-[calc(100vh-64px)] bg-[#f8f9fb] p-8 md:p-12">
+            <div class="max-w-6xl mx-auto">
+                <header class="mb-12">
+                    <h1 class="text-4xl font-extrabold font-headline text-primary tracking-tight">Configuración de Usuario</h1>
+                    <p class="text-on-surface-variant mt-2 font-body">Gestiona tus parámetros académicos y perfil profesional.</p>
+                </header>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Internal Navigation (Left) -->
+                    <nav class="lg:col-span-3 flex flex-col gap-2">
+                        <button class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-medium">Perfil</button>
+                        <button class="flex items-center justify-between px-4 py-3 rounded-lg bg-primary text-white shadow-lg font-semibold">
+                            <span>Preferencias de Aula</span>
+                            <span class="material-symbols-outlined text-sm">chevron_right</span>
+                        </button>
+                        <button class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-medium">Seguridad</button>
+                    </nav>
+                    <!-- Right Panels -->
+                    <div class="lg:col-span-9 space-y-8">
+                        <!-- Section 1: IVE Parameters -->
+                        <section class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+                            <div class="flex items-center gap-3 mb-10">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">analytics</span>
+                                </div>
+                                <h2 class="text-xl font-bold font-headline text-on-surface">Parámetros del Índice de Vulnerabilidad (IVE)</h2>
+                            </div>
+                            <div class="space-y-12">
+                                <!-- Slider 1 -->
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end">
+                                        <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Umbral de Inasistencia Crítica</label>
+                                        <span class="text-2xl font-bold text-primary font-headline">15%</span>
+                                    </div>
+                                    <input class="w-full" max="100" min="0" type="range" value="15"/>
+                                    <p class="text-xs text-outline italic">Define el porcentaje de faltas permitidas antes de disparar una alerta de riesgo.</p>
+                                </div>
+                                <!-- Slider 2 -->
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end">
+                                        <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Umbral de Rendimiento Bajo</label>
+                                        <span class="text-2xl font-bold text-primary font-headline">3.0</span>
+                                    </div>
+                                    <input class="w-full" max="70" min="10" type="range" value="30"/>
+                                    <p class="text-xs text-outline italic">Promedio mínimo ponderado para el seguimiento preventivo de estudiantes.</p>
+                                </div>
+                                <!-- Toggle -->
+                                <div class="pt-8 border-t border-slate-100 flex items-center justify-between">
+                                    <div class="space-y-1">
+                                        <p class="font-bold text-on-surface">Notificar alertas de riesgo automáticamente</p>
+                                        <p class="text-sm text-on-surface-variant">Se enviará un correo institucional al tutor si se alcanzan los umbrales.</p>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox"/>
+                                        <div class="w-12 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Section 2: Profile & Signature -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Profile Info -->
+                            <section class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+                                <h3 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-8">Información de Perfil</h3>
+                                <div class="flex flex-col items-center text-center">
+                                    <div class="relative mb-6">
+                                        <img alt="Elena Rivas Profile" class="w-32 h-32 rounded-2xl object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbz_dFpwnffP9V3mTQTa3sx8SEYWmnPWU9z_WWsceIcuC7Z_TYA_7hditZpwX8799Z9gPlxvep_qxXvJET9btbP_Kl0yv7HeXQy0ZgZxGPWhJ9TbEWE_-kbfEurrn_BzVnkI29GRnbHVEUneP4Aj6dOPFeUZK0h0eysLrZalrITwVyfcuK9rP7FWOzfq1agq-RYtW9wOY4h0idVPoLk9LqQ0qCj6XT6RznMyu_UgWuW4w35Ol3Wv7Kj2xHwOFt_tsa5ZVg5CGL8Xc"/>
+                                        <button class="absolute bottom-2 right-[-8px] bg-primary text-white p-2 rounded-lg shadow-xl hover:scale-110 transition-transform">
+                                            <span class="material-symbols-outlined text-[14px]">edit</span>
+                                        </button>
+                                    </div>
+                                    <h4 class="text-2xl font-bold text-on-surface font-headline">Elena Rivas</h4>
+                                    <p class="text-primary font-semibold text-sm">Senior Educator</p>
+                                    <p class="text-on-surface-variant text-xs mt-2">ID Académico: #GER-9921</p>
+                                </div>
+                            </section>
+                            <!-- Digital Signature -->
+                            <section class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 flex flex-col">
+                                <h3 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-8">Firma Digital</h3>
+                                <div class="flex-grow border-2 border-dashed border-slate-200 rounded-2xl flex flex-col items-center justify-center p-6 bg-slate-50/50 hover:bg-slate-50 transition-colors cursor-pointer group">
+                                    <span class="material-symbols-outlined text-4xl text-slate-400 mb-4 group-hover:scale-110 transition-transform">cloud_upload</span>
+                                    <p class="text-sm font-bold text-on-surface">Cargar Firma Digital</p>
+                                    <p class="text-[10px] text-on-surface-variant mt-1">Formato PNG o SVG (Max 2MB)</p>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- Action Button -->
+                        <div class="flex justify-end pt-4">
+                            <button class="bg-primary text-white px-12 py-4 rounded-xl font-bold tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+                                Guardar Cambios
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

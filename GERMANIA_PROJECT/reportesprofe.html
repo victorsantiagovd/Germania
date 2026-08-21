@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GERMANIA - Reportes Académicos</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 pt-16 bg-[#f2f4f6] dark:bg-slate-900 flex flex-col border-r border-slate-200">
+        <div class="px-6 py-6 border-none">
+            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Panel del Docente</p>
+            <p class="text-xs text-primary font-medium opacity-70">Director de Grupo</p>
+        </div>
+        <nav class="flex flex-col gap-1 px-0">
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="panelprofesor.html">
+                <span class="material-symbols-outlined text-[22px]">dashboard</span>
+                <span class="text-sm font-semibold font-headline">Inicio</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="mis-grupos.html">
+                <span class="material-symbols-outlined text-[22px]">group</span>
+                <span class="text-sm font-semibold font-headline">Mis Grupos</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="planilla-notas.html">
+                <span class="material-symbols-outlined text-[22px]">description</span>
+                <span class="text-sm font-semibold font-headline">Planilla de Notas</span>
+            </a>
+            <a class="flex items-center gap-4 py-3 text-slate-500 hover:text-primary hover:bg-white/30 transition-all pl-6" href="asistencia.html">
+                <span class="material-symbols-outlined text-[22px]">calendar_today</span>
+                <span class="text-sm font-semibold font-headline">Asistencia</span>
+            </a>
+            <a class="relative flex items-center gap-4 py-3 text-primary font-bold bg-white/50 pl-6" href="reportesprofe.html">
+                <div class="active-pill bg-primary"></div>
+                <span class="material-symbols-outlined text-[22px]">analytics</span>
+                <span class="text-sm font-semibold font-headline">Reportes</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- TopNavBar -->
+    <header class="bg-gradient-to-r from-[#000666] to-[#1a237e] text-white fixed full-width top-0 z-50 shadow-lg shadow-blue-900/20 flex justify-between items-center w-full px-8 py-4 h-16">
+        <div class="text-2xl font-bold tracking-tight text-white uppercase pl-0">GERMANIA</div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 hover:bg-white/10 transition-colors rounded-full scale-95 duration-200">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <a href="configuracion.html" class="p-2 hover:bg-white/10 transition-colors rounded-full scale-95 duration-200">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+            </a>
+            <div class="flex items-center gap-3 pl-4 border-l border-white/20">
+                <div class="text-right hidden sm:block">
+                    <p class="text-xs font-bold leading-none">Elena Rivas</p>
+                    <p class="text-[10px] text-blue-200 opacity-80">Profesor Titular</p>
+                </div>
+                <img alt="Elena Rivas" class="w-8 h-8 rounded-full border-2 border-white/30 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAMj41l5ek8FjrcDWNJDd_3rDY3U0O1YXbto5MC-LZLVupE2-fSgdCcfUrtKs-9EHZfXtoKXrGKaAGfsiYCZKNbZU7LsFoiMD9HYuKkNmen3_y-kXwKAT-0f0sCq2hyLfdMh0dmY7c3_Bqto3v89C-KSqvoQHJFby7hDz-Z7sN7afHrSYmt7lVm_gDdiUTHS5oEI3IyXJCqSci6ntB5HEML2iuRRjjIOcZXjGb90_k3o35U517Mz0GemIKCK9-upc1afCqqswLNM"/>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 ml-64 mt-16 bg-surface flex flex-col">
+        <!-- Filter Bar -->
+        <section class="bg-surface-container-lowest px-8 py-6 border-b border-outline-variant/10 z-30">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-end gap-4">
+                <div class="flex-1 min-w-[200px]">
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Sede</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none py-2.5 px-4 pr-10">
+                            <option>Sede Principal</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Grupo</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none py-2.5 px-4 pr-10">
+                            <option>Matemáticas 9-A</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Asignatura</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none py-2.5 px-4 pr-10">
+                            <option>Matemáticas</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Periodo</label>
+                    <div class="relative">
+                        <select class="w-full bg-surface-container-high border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary/20 appearance-none py-2.5 px-4 pr-10">
+                            <option>2° Periodo</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+                <button class="bg-primary text-on-primary font-bold px-8 py-2.5 rounded-lg hover:bg-primary-container transition-colors active:scale-95 duration-200 h-[42px] flex items-center justify-center">Consultar</button>
+            </div>
+        </section>
+
+        <!-- Dashboard Body -->
+        <div class="p-8 max-w-7xl mx-auto space-y-10 w-full">
+            <div class="space-y-1">
+                <h1 class="text-3xl font-extrabold text-primary tracking-tight">Seguimiento y Reportes Académicos</h1>
+                <p class="text-secondary font-medium">Visualización de datos y alertas de riesgo para el grupo seleccionado</p>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Bar Chart: Promedio de Notas -->
+                <div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="text-lg font-bold text-primary">Promedio de Notas por Actividad</h3>
+                        <span class="material-symbols-outlined text-slate-400" data-icon="more_vert">more_vert</span>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold text-slate-500 uppercase">
+                                <span>Parcial Álgebra</span><span class="text-primary">4.2</span>
+                            </div>
+                            <div class="w-full bg-surface-container rounded-full h-3 overflow-hidden">
+                                <div class="bg-primary h-full rounded-full" style="width: 84%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold text-slate-500 uppercase">
+                                <span>Taller Geometría</span><span class="text-primary">3.8</span>
+                            </div>
+                            <div class="w-full bg-surface-container rounded-full h-3 overflow-hidden">
+                                <div class="bg-primary/80 h-full rounded-full" style="width: 76%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold text-slate-500 uppercase">
+                                <span>Quiz Funciones</span><span class="text-primary">4.5</span>
+                            </div>
+                            <div class="w-full bg-surface-container rounded-full h-3 overflow-hidden">
+                                <div class="bg-primary h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold text-slate-500 uppercase">
+                                <span>Proyecto Final</span><span class="text-primary">3.1</span>
+                            </div>
+                            <div class="w-full bg-surface-container rounded-full h-3 overflow-hidden">
+                                <div class="bg-primary/60 h-full rounded-full" style="width: 62%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pie Chart: Distribución Inasistencias -->
+                <div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="text-lg font-bold text-primary">Distribución de Inasistencias</h3>
+                        <span class="material-symbols-outlined text-slate-400" data-icon="pie_chart">pie_chart</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center flex-1 py-4">
+                        <div class="relative w-48 h-48 rounded-full border-[16px] border-slate-100 flex items-center justify-center">
+                            <div class="absolute inset-0 rounded-full border-[16px] border-t-primary border-r-secondary border-b-error border-l-secondary-fixed opacity-80 rotate-45"></div>
+                            <div class="text-center">
+                                <p class="text-3xl font-extrabold text-primary">42</p>
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Total Faltas</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-10 w-full">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-primary"></div><span class="text-xs font-medium text-slate-600">Salud (45%)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-secondary"></div><span class="text-xs font-medium text-slate-600">Clima (20%)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-error"></div><span class="text-xs font-medium text-slate-600">Sin Justificar (25%)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-secondary-fixed"></div><span class="text-xs font-medium text-slate-600">Cosecha (10%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Alert Section -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 bg-error-container/30 p-4 rounded-xl border-l-4 border-error">
+                    <span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+                    <div>
+                        <h3 class="text-sm font-bold text-on-error-container">Alerta de Riesgo Académico</h3>
+                        <p class="text-xs text-on-error-container/80">Estudiantes con rendimiento o asistencia por debajo del umbral institucional.</p>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+                    <div class="p-6 border-b border-outline-variant/10">
+                        <h3 class="text-lg font-bold text-primary">Estudiantes en Mayor Riesgo</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-surface-container-low/50">
+                                <tr>
+                                    <th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Estudiante</th>
+                                    <th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center">Promedio Actual</th>
+                                    <th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center">% Asistencia</th>
+                                    <th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest text-right">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/10">
+                                <tr class="hover:bg-surface-container-low/30 transition-colors">
+                                    <td class="px-8 py-5">
+                                        <div class="flex items-center gap-4">
+                                            <img alt="Student" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApu3QZFGZvyuArm3o2_YYJlFqMgvjngn0OlpxOocPrNWKruf43jo2bcfsWO1SFf-MqUwCcfTmH5-qdSfURxORqu7TSJBymlHn7fkXqG8zaxuGVX5x9LJWEJcPG0c8dQ6gHvTe59OC-1ml4csQ7zHaVLcFr2sLXQCyDREdFpLZZQYvyM5DpiK9xs3LiFMFjFDaIB5hsCqBzfnyWJM2HL9yeCgp1jDHIcI9pIlk-43atb0j6MVtnWA9nc8lDwUOGZceJ9TLKTw1SJFs"/>
+                                            <div>
+                                                <p class="text-sm font-bold text-primary">Mateo Rodriguez</p>
+                                                <p class="text-[11px] text-slate-500">ID: 1092348</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-5 text-center">
+                                        <span class="px-3 py-1 rounded-full bg-error-container text-error text-sm font-bold">2.8</span>
+                                    </td>
+                                    <td class="px-8 py-5 text-center">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <span class="text-sm font-bold text-error">72%</span>
+                                            <div class="w-16 h-1 bg-surface-container rounded-full">
+                                                <div class="bg-error h-full rounded-full" style="width: 72%"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-5 text-right">
+                                        <button class="text-primary text-xs font-bold hover:underline flex items-center gap-1 ml-auto">
+                                            Ver Seguimiento <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-low/30 transition-colors">
+                                    <td class="px-8 py-5">
+                                        <div class="flex items-center gap-4">
+                                            <img alt="Student" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzVLlQmhAGKzuEzKIsCKRuDBeXXI2xOl9a__0r58q01vZDW6P-8O9dmvnJzrmCkvNof_bX3hxdcaxmITW0G25OR9sFwK2qqQPzfZ1TaTPuPahsSQKgEklkZy8hre4yiRU9AKbw52Pz5R9YwJw9XDDuzEuaQP3oVrvedkpCfOkdH_x8z63-hu_xmhkZ5LYkZ_DXPyJTKuqcMZ8b1jDAmbUA6UERGdqJW9VX-h6sp5CFAZ9MsgEwmNQDWfaqRQF6j6yzXbBeSeVRDJ0"/>
+                                            <div>
+                                                <p class="text-sm font-bold text-primary">Isabella Lopez</p>
+                                                <p class="text-[11px] text-slate-500">ID: 1092551</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-5 text-center">
+                                        <span class="px-3 py-1 rounded-full bg-error-container text-error text-sm font-bold">3.1</span>
+                                    </td>
+                                    <td class="px-8 py-5 text-center">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <span class="text-sm font-bold text-primary">88%</span>
+                                            <div class="w-16 h-1 bg-surface-container rounded-full">
+                                                <div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-5 text-right">
+                                        <button class="text-primary text-xs font-bold hover:underline flex items-center gap-1 ml-auto">
+                                            Ver Seguimiento <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

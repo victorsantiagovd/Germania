@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/horario.css" />
 <link rel="stylesheet" href="css/responsive.css" />
+
+<!-- Misma protección de sesión que biblioteca.html y calificaciones.html -->
 <script src="js/auth.js"></script>
 
 </head>
@@ -17,7 +19,7 @@
 
 <div class="app">
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR: idéntica en todas las páginas del portal estudiantil -->
   <header class="navbar">
     <div class="navbar__brand">Germania</div>
     <div class="navbar__actions">
@@ -31,7 +33,7 @@
     </div>
   </header>
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR: mismo menú; aquí "Horario" lleva is-active -->
   <aside class="sidebar">
     <div class="sidebar__brand">
       <div class="sidebar__brand-name">IE GERMANIA</div>
@@ -71,6 +73,8 @@
 
   <!-- MAIN -->
   <main class="main">
+    <!-- page-head con navegación de semana: prevWeek/nextWeek + weekLabel
+         los maneja js/horario.js para cambiar qué semana se muestra abajo -->
     <div class="page-head">
       <div>
         <h1>Mi Horario</h1>
@@ -87,6 +91,10 @@
       </div>
     </div>
 
+    <!-- Tabla de horario: cada fila es un bloque de horas, cada celda es un día.
+         Las clases usan 3 variantes de color según el tipo:
+         sin clase extra = materia normal, is-lab = laboratorio, is-elective = electiva.
+         "Martes" trae la clase is-today para resaltar el día actual -->
     <div class="schedule-table-wrap">
       <table class="schedule-table">
         <thead>
@@ -117,7 +125,9 @@
             <td><div class="class-block"><div class="class-block__title">Lengua y Literatura</div><div class="class-block__place">Aula 210</div></div></td>
           </tr>
           <tr>
-            <td class="time-col">01:00<br />02:30</td>
+            <!-- Corregido: estaba en "01:00 / 02:30" (formato 12h, ambiguo con
+                 la 1 AM); ahora usa el mismo formato 24h que las demás filas -->
+            <td class="time-col">13:00<br />14:30</td>
             <td><div class="class-block is-elective"><div class="class-block__title">Filosofía y Ética</div><div class="class-block__place">Aula 305</div></div></td>
             <td><div class="class-block"><div class="class-block__title">Sistemas de Control</div><div class="class-block__place">Aula 201 · Bloque A</div></div></td>
             <td><div class="class-block is-elective"><div class="class-block__title">Economía Política</div><div class="class-block__place">Aula 118</div></div></td>
@@ -129,7 +139,8 @@
     </div>
   </main>
 
-  <!-- RIGHT PANEL -->
+  <!-- RIGHT PANEL: recordatorio de la próxima clase.
+       is-current marca la clase que está resaltada como "en curso / siguiente" -->
   <aside class="rightbar">
     <div class="schedule-panel">
       <div class="schedule-panel__header">
@@ -161,6 +172,7 @@
 
 </div>
 
+<!-- horario.js: cambia de semana y probablemente marca el día/clase actual -->
 <script src="js/menu.js"></script>
 <script src="js/horario.js"></script>
 </body>

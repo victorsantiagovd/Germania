@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Estudiante · EduLedger</title>
+
+<!-- Precarga e importación de fuentes tipográficas desde Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Hojas de estilo CSS (Variables, estilos globales y adaptabilidad responsiva) -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ==================== BARRA SUPERIOR (TOPBAR) ==================== -->
+<header class="topbar">
+  <div class="topbar-left">
+    <!-- Botón de menú para dispositivos móviles -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <span class="brand">Germania</span>
+  </div>
+  
+  <div class="topbar-right">
+    <!-- Botón de notificaciones -->
+    <button class="icon-btn" aria-label="Notificaciones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      <span class="dot"></span>
+    </button>
+    
+    <!-- Botón de configuración -->
+    <button class="icon-btn" aria-label="Configuración">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    </button>
+    
+    <!-- Avatar de usuario -->
+    <div class="avatar">AD</div>
+  </div>
+</header>
+
+<!-- Contenedor principal de la aplicación -->
+<div class="app-shell">
+  <!-- Fondo semitransparente para móvil -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ==================== NAVEGACIÓN LATERAL (SIDEBAR) ==================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-role">
+      <div class="role-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><polygon points="12 3 21 9 3 9"></polygon></svg>
+      </div>
+      <span class="role-label">Administrador</span>
+    </div>
+    
+    <nav class="nav-group">
+      <a class="nav-link" href="paneladmin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Inicio
+      </a>
+      <a class="nav-link" href="instituadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><polygon points="12 3 21 9 3 9"></polygon></svg>
+        Institución
+      </a>
+      <!-- Enlace activo de la sección Matrículas -->
+      <a class="nav-link active" href="matriculadmin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="8.5" cy="11" r="2.2"></circle><line x1="5.5" y1="17" x2="11.5" y2="17"></line><line x1="15" y1="9" x2="19" y2="9"></line><line x1="15" y1="13" x2="19" y2="13"></line></svg>
+        Matrículas
+      </a>
+      <a class="nav-link" href="docenteadmi.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
+        Docentes
+      </a>
+      <a class="nav-link" href="reporte.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        Reportes
+      </a>
+    </nav>
+    <div class="sidebar-footer">EduLedger v2.4 · Germania</div>
+  </aside>
+
+  <!-- ==================== ÁREA DE CONTENIDO PRINCIPAL ==================== -->
+  <main class="main-content">
+    <!-- Encabezado de página e identificador de expediente -->
+    <div class="page-header">
+      <div>
+        <h1>Registro de Estudiante</h1>
+        <p class="subtitle">Complete la información básica para iniciar el proceso de matrícula.</p>
+      </div>
+      <span class="expediente-tag">EXPEDIENTE 2024-001</span>
+    </div>
+
+    <!-- ==================== NAVEGADOR DE PASOS (STEPPER) ==================== -->
+    <div class="stepper">
+      <div class="step active" data-step="1"><div class="step-line"></div><div class="step-circle">1</div><div class="step-label">Información Básica</div></div>
+      <div class="step" data-step="2"><div class="step-line"></div><div class="step-circle">2</div><div class="step-label">Docentes</div></div>
+      <div class="step" data-step="3"><div class="step-line"></div><div class="step-circle">3</div><div class="step-label">Documentos</div></div>
+      <div class="step" data-step="4"><div class="step-line"></div><div class="step-circle">4</div><div class="step-label">Confirmación</div></div>
+    </div>
+
+    <!-- Formulario principal multitarea -->
+    <form id="matriculaForm" onsubmit="return false;">
+
+      <!-- ==================== PASO 1: INFORMACIÓN BÁSICA ==================== -->
+      <div class="wizard-panel active" data-panel="1">
+        <div class="form-layout">
+          <!-- Bloque de datos de identificación -->
+          <div class="card card-pad">
+            <div class="section-title" style="margin-bottom:20px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Identificación del Estudiante
+            </div>
+            <div class="field-group">
+              <label for="nombreEstudiante">Nombre completo</label>
+              <input type="text" id="nombreEstudiante" placeholder="Ej: Juan Camilo Pérez Rodríguez">
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label for="tipoDocumento">Documento de identidad</label>
+                <select id="tipoDocumento">
+                  <option>Tarjeta de Identidad (TI)</option>
+                  <option>Registro Civil (RC)</option>
+                  <option>Cédula de Ciudadanía (CC)</option>
+                  <option>Cédula de Extranjería (CE)</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="numeroDocumento">Número de documento</label>
+                <input type="text" id="numeroDocumento" placeholder="0000000000" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+
+          <!-- Cuadro informativo lateral -->
+          <div class="form-side">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            <h3>Gestión de Archivos Digitales</h3>
+            <p>EduLedger garantiza el cumplimiento legal de cada registro institucional según las normas del ministerio.</p>
+          </div>
+        </div>
+
+        <!-- Detalle demográfico y grado -->
+        <div class="card card-pad" style="margin-bottom:20px;">
+          <div class="field-row-3">
+            <div class="field-group" style="margin-bottom:0;">
+              <label for="fechaNacimiento">Fecha de nacimiento</label>
+              <input type="date" id="fechaNacimiento">
+            </div>
+            <div class="field-group" style="margin-bottom:0;">
+              <label>Género</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="genero" value="Masculino"> Masculino</label>
+                <label class="radio-option"><input type="radio" name="genero" value="Femenino"> Femenino</label>
+              </div>
+            </div>
+            <div class="field-group" style="margin-bottom:0;">
+              <label for="gradoMatricular">Grado a matricular</label>
+              <select id="gradoMatricular">
+                <option value="">Seleccione</option>
+                <option>Sexto (6º)</option>
+                <option>Séptimo (7º)</option>
+                <option>Octavo (8º)</option>
+                <option>Noveno (9º)</option>
+                <option>Décimo (10º)</option>
+                <option>Undécimo (11º)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjetas de selección interactiva de campus/sede -->
+        <div class="card card-pad">
+          <div class="section-title" style="margin-bottom:4px;">Asignación de Sede</div>
+          <p class="subtitle" style="margin-bottom:16px;font-size:.85rem;">Seleccione el campus educativo donde el estudiante cursará sus estudios.</p>
+          <div class="choice-grid">
+            <div class="choice-card selected" tabindex="0">
+              <strong>Sede Principal</strong>
+              <span>Centro Histórico, Calle 45</span>
+            </div>
+            <div class="choice-card" tabindex="0">
+              <strong>Sede Norte</strong>
+              <span>Bulevar de las Rosas</span>
+            </div>
+            <div class="choice-card" tabindex="0">
+              <strong>Sede Deportiva</strong>
+              <span>Complejo Olímpico Sur</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones de navegación del paso 1 -->
+        <div class="wizard-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" data-action="next">Continuar</button>
+        </div>
+      </div>
+
+      <!-- ==================== PASO 2: ASIGNACIÓN DE DOCENTES ==================== -->
+      <div class="wizard-panel" data-panel="2">
+        <div class="card card-pad" style="margin-bottom:20px;">
+          <div class="section-title" style="margin-bottom:20px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
+            Asignación de Docentes y Grupo
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label for="directorGrupo">Director de grupo</label>
+              <select id="directorGrupo">
+                <option>Adriana Morales — Matemáticas Puras</option>
+                <option>Camila Restrepo — Lengua Castellana</option>
+                <option>Julian Paredes — Biología Marina</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="jornada">Jornada</label>
+              <select id="jornada">
+                <option>Mañana (6:30 a.m. – 12:30 p.m.)</option>
+                <option>Tarde (1:00 p.m. – 6:00 p.m.)</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label for="observacionesAcad">Observaciones académicas</label>
+            <input type="text" id="observacionesAcad" placeholder="Ej: Estudiante proveniente de traslado interno">
+          </div>
+        </div>
+        <!-- Botones de navegación del paso 2 -->
+        <div class="wizard-nav">
+          <button type="button" class="btn btn-secondary" data-action="back">Atrás</button>
+          <button type="button" class="btn btn-primary" data-action="next">Continuar</button>
+        </div>
+      </div>
+
+      <!-- ==================== PASO 3: DOCUMENTOS REQUERIDOS ==================== -->
+      <div class="wizard-panel" data-panel="3">
+        <div class="card card-pad" style="margin-bottom:20px;">
+          <div class="section-title" style="margin-bottom:20px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            Documentos Requeridos
+          </div>
+          <!-- Tabla de estado de archivos adjuntos -->
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Documento</th><th>Formato</th><th>Estado</th></tr></thead>
+              <tbody>
+                <tr><td>Registro civil / Tarjeta de identidad</td><td>PDF</td><td><span class="status-pill status-pendiente">PENDIENTE</span></td></tr>
+                <tr><td>Certificado de vacunación</td><td>PDF / JPG</td><td><span class="status-pill status-pendiente">PENDIENTE</span></td></tr>
+                <tr><td>Boletines años anteriores</td><td>PDF</td><td><span class="status-pill status-pendiente">PENDIENTE</span></td></tr>
+                <tr><td>Foto tamaño documento</td><td>JPG / PNG</td><td><span class="status-pill status-pendiente">PENDIENTE</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Botones de navegación del paso 3 -->
+        <div class="wizard-nav">
+          <button type="button" class="btn btn-secondary" data-action="back">Atrás</button>
+          <button type="button" class="btn btn-primary" data-action="next">Continuar</button>
+        </div>
+      </div>
+
+      <!-- ==================== PASO 4: CONFIRMACIÓN Y RESUMEN ==================== -->
+      <div class="wizard-panel" data-panel="4">
+        <div class="card card-pad">
+          <!-- Banner de verificación previo al envío -->
+          <div class="confirm-banner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Revise la información antes de confirmar el registro. Podrá editar cualquier campo volviendo a los pasos anteriores.</span>
+          </div>
+          <div class="section-title" style="margin-bottom:8px;">Resumen de la Matrícula</div>
+          <!-- Contenedor dinámico cargado mediante JavaScript -->
+          <div class="summary-list" id="summaryList"></div>
+          
+          <!-- Botones finales de confirmación -->
+          <div class="wizard-nav">
+            <button type="button" class="btn btn-secondary" data-action="back">Atrás</button>
+            <button type="button" class="btn btn-primary" id="submitMatricula">Confirmar Matrícula</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </main>
+</div>
+
+<!-- Lógica JavaScript para la interacción del formulario e interfaz -->
+<script src="js/main.js"></script>
+</body>
+</html>
